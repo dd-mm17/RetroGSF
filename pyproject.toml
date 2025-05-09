@@ -9,11 +9,17 @@ requires-python = ">=3.10"
 license = {file = "LICENSE"}
 description = "Predict and evaluates a solvent for a retrosynthesized reaction (done by AiZynFinder)"
 dependencies = [
-    # "rdkit",
-]
+    "rdkit",
+    "numpy == 2.0.1",
+    "rxn_insight",
+    "google-generativeai",
+    "aizynthfinder",
+    "python-dotenv",
+    ]
 authors = [
-    {name = "Diego Meraldi", email = "diego.meraldi@epfl.ch"}
-]
+  {name = "Diego Meraldi", email = "diego.meraldi@epfl.ch"},
+  {name = "Witek Huguenin-Dezot", email = "witek.huguenin-dezot@epfl.ch"},
+  {name = "Lea Lombard"}, {email = "lea.lombard@epfl.ch"}]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
