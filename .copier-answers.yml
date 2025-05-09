@@ -1,0 +1,10 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 08e8b92
+_src_path: gh:schwallergroup/copier-liac-minimal
+author_email: diego.meraldi@epfl.ch
+author_name: Diego Meraldi
+github_org: dd-mm17
+package_name: retrogsf
+project_name: retrogsf
+short_description: Predict and evaluates a solvent for a retrosynthesized reaction
+    (done by AiZynFinder)
