@@ -10,11 +10,11 @@ license = {file = "LICENSE"}
 description = "Predict and evaluates a solvent for a retrosynthesized reaction (done by AiZynFinder)"
 dependencies = [
     "rdkit",
-    "numpy<2.0.0",  # Change this to be compatible with pandas
+    "numpy<2.0.0",  # Compatible with pandas
     "pandas>=1.5.0,<2.0.0",
     "rxn_insight",
-    "google-generativeai",
-    "aizynthfinder",
+    "google-generativeai>=0.3.0",  # Specify minimum version
+    "aizynthfinder>=4.3.0,<4.4.0",
     "python-dotenv",
 ]
 authors = [
@@ -46,6 +46,7 @@ test = [
     "pytest-cov",
     "tox",
     "genbadge[coverage]",
+    "google-generativeai>=0.3.0",
 ]
 doc = [
     "furo",
