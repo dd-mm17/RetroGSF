@@ -10,12 +10,13 @@ license = {file = "LICENSE"}
 description = "Predict and evaluates a solvent for a retrosynthesized reaction (done by AiZynFinder)"
 dependencies = [
     "rdkit",
-    "numpy == 2.0.1",
+    "numpy<2.0.0",  # Change this to be compatible with pandas
+    "pandas>=1.5.0,<2.0.0",
     "rxn_insight",
     "google-generativeai",
     "aizynthfinder",
     "python-dotenv",
-    ]
+]
 authors = [
   {name = "Diego Meraldi", email = "diego.meraldi@epfl.ch"},
   {name = "Witek Huguenin-Dezot", email = "witek.huguenin-dezot@epfl.ch"},
