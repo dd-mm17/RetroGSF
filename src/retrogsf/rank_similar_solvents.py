@@ -1,7 +1,9 @@
 import pandas as pd
 import numpy as np
+import os
 
-def rank_similar_solvents(target_smiles, data_path='../../data/Solvent_properties_with_smile.csv', n_recommendations=5):
+
+def rank_similar_solvents(target_smiles, data_path='RetroGSF/data/Solvant_properties_with_smile.csv', n_recommendations=5):
     """
     Find solvents with similar physical properties to the target solvent and rank them.
     
@@ -27,7 +29,7 @@ def rank_similar_solvents(target_smiles, data_path='../../data/Solvent_propertie
     
     # Get the solvent name and properties
     target_solvent = df[df['SMILES'] == target_smiles]['Name'].iloc[0]
-    target = df[df['Name'] == target_smiles].iloc[0]
+    target = df[df['SMILES'] == target_smiles].iloc[0]
     
     # Check if target solvent is hazardous and warn user
     if target['Adjusted ranking'] in ['Hazardous', 'Highly Hazardous']:
@@ -150,5 +152,5 @@ def rank_similar_solvents(target_smiles, data_path='../../data/Solvent_propertie
     
     return results
 
-result = rank_similar_solvents('CCO')
-print(result['by_health'])
+result = rank_similar_solvents('O')
+print(result['target_solvent_properties'])
