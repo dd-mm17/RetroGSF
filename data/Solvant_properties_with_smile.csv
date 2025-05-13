@@ -1,0 +1,273 @@
+Adjusted ranking;Name;SMILES;Environment Ranking;Health Ranking;Safety Ranking;Density;Dielectric;Dipole;Refractive Index;Melting point;Boiling point
+Recommended;Water;O;1;1;1;1;78.3;1.77;1.333;0;100
+Problematic;Dihydrolevoglucosenone (Cyrene);C1CC2(C(=O)CC1O2)O;7;2;1;1.25;NA;NA;NA;-18;203
+Problematic;Glycerol;C(C(CO)O)O;7;1;1;1.26;42.5;4.2;1.47;18.2;290.1
+Recommended;Ethylene Glycol [1,2-Ethanediol];OCCO;5;2;1;1.109;37.7;2.31;1.432;-13;197.2
+Recommended;Propylene Glycol;CC(O)CO;5;2;1;1.03;NA;3.63;1.43;-60;187.3
+Problematic;Diethylene Glycol;OCCOCCO;7;1;2;1.109;31.7;2.31;1.448;-7.8;245.7
+Recommended;Triethanolamine;OCCN(CCO)CCO;5;1;1;1.12;NA;1.08;NA;21.2;335.4
+Problematic;DMSO [Dimethylsulfoxide];CS(=O)C;5;1;1;1.095;46.7;3.96;1.479;18.5;189
+Recommended;Ethanol;CCO;3;3;4;0.785;24.6;1.74;1.361;-114.5;78.3
+Recommended;IPA [Propan-2-ol];CC(C)O;3;3;4;0.786;19.9;1.65;1.377;-88;82.4
+Problematic;Butyric acid;CCCC(=O)O;5;1;7;0.95;NA;1.65;1.4;-5.2;163.3
+Problematic;Acetonitrile;CC#N;3;3;4;0.776;35.9;3.95;1.344;-43.8;81.6
+Recommended;Triethylene Glycol;OCCOCCOCCO;3;1;2;1.125;23.7;3;1.456;-4.3;288
+Highly Hazardous;Nitromethane;C[N+](=O)[O-];3;2;10;1.131;36.2;3.5;1.382;-28.6;101.2
+Recommended;tert-Butanol [2-Methylpropan-2-ol];CC(C)(C)O;3;3;4;0.789;12.5;1.65;1.388;25.6;82.3
+Recommended;Butan-2-ol;CCC(C)O;3;2;3;0.808;16.6;1.65;1.397;-114.7;99.5
+Problematic;Propylene Carbonate [4-Methyl-1,3-dioxolan-2-one];CC1COC(=O)O1;7;2;1;1.199;62.9;4.77;1.421;-54.5;241.7
+Recommended;Pentamethyl Phosphonic Diamide;CN(C)P(=O)(N(C)C)N(C)C;5;3;1;1.024;NA;NA;1.459;NA;76
+Recommended;3-Methylbutan-1-ol;CC(C)CCO;3;2;3;0.809;15.2;1.83;1.407;-117.2;130.8
+Recommended;Acetone;CC(=O)C;5;3;5;0.784;21.4;2.88;1.359;-94.7;56.1
+Recommended;Methyl Carbitol [2-[2-(Methoxy)ethoxy]ethanol];COCCOCO;5;1;2;1.022;NA;0;1.426;-69;194
+Recommended;1-Methoxypropan-2-ol;COC(C)CO;3;2;3;0.92;NA;2.4;1.4;-96.7;120.6
+Recommended;Pentan-1-ol;CCCCCO;3;2;3;0.814;13.9;1.71;1.41;-78.2;138
+Recommended;PM Glycol Ether [1-Methoxy-2-propanol];COC(C)CO;3;2;3;0.921;NA;2.4;1.4;-97;120
+Recommended;Propyl Cellosolve [2-Propoxyethanol];CCCOCCO;5;2;3;0.913;NA;NA;NA;-90;150
+Recommended;4-Hydroxy-4-methylpentan-2-one;CC(=O)CC(C)(C)O;5;2;3;0.935;NA;NA;1.423;-47;168.5
+Recommended;Cyclohexanol;OC1CCCCC1;5;2;2;0.964;15;1.86;1.465;25.2;161.1
+Problematic;Benzyl alcohol;OCc1ccccc1;7;2;1;1.042;13.1;1.65;1.54;-15.3;204.8
+Recommended;tert-Amyl Alcohol [2-Methylbutan-2-ol];CCC(C)(C)O;3;2;4;0.806;5.8;1.71;1.405;-8.8;102.2
+Hazardous;Pyridine;c1ccncc1;3;2;4;0.978;13.2;2.21;1.509;-41.6;115.3
+Recommended;Pentan-2-ol;CCCC(C)O;5;2;3;0.81;13.7;1.65;1.406;-73.2;119
+Problematic;Carbitol [2-(2-ethoxyethoxy)ethanol];CCOCCOCCO;7;1;2;0.989;NA;0;1.428;-43;201
+Recommended;Pentan-3-ol;CCC(CC)O;5;2;3;0.821;13.4;1.65;1.41;-75;115.3
+Recommended;2-Methyl Butanol;CCC(C)CO;3;2;3;0.681;NA;0;1.41;NA;128.7
+Problematic;Tetraethylene glycol;OCCOCCOCCOCCO;7;1;1;1.129;19.7;3.24;1.458;-6.2;327.3
+Problematic;Methyl Acetate;CC(=O)OC;5;3;5;0.928;6.9;1.69;1.361;-98.1;57
+Recommended;Cyclopentanone;O=C1CCCC1;5;2;3;0.944;14.5;3.28;1.437;-51.3;130.7
+Recommended;Butanone [MEK];CCC(=O)C;3;3;5;0.805;18.9;2.78;1.379;-86.7;79.6
+Recommended;Methyl Isobutyl Carbinol;CC(C)CC(C)O;3;2;3;0.671;NA;1.7;1.41;NA;131.7
+Recommended;Butyl Cellosolve [Ethylene glycol monobutyl ether];CCCCOCCO;5;2;1;0.902;NA;2.08;1.419;-77;171
+Recommended;N-methylmorpholine [NNM];CN1CCOCC1;3;2;5;0.92;NA;NA;1.435;-65;117
+Recommended;Trimethoxymethane [Trimethyl orthoformate];COC(OC)OC;3;2;5;0.963;NA;1.7;1.379;-53;101.5
+Recommended;Pentan-2-one;CCCC(=O)C;3;2;5;0.802;15.4;2.74;1.391;-76.9;102.3
+Problematic;Butyl Carbitol [2-[2-(Butyloxy)ethoxy]ethanol];CCCCOCCOCCO;7;2;1;0.952;NA;0;1.426;-68;230
+Recommended;Methyl Propionate;CCC(=O)OC;3;3;5;0.908;6.2;1.67;1.376;-87.5;80
+Recommended;PMA Glycol Ether [1-methoxy-2-propanol acetate];COC(C)C(=O)OC;5;1;3;0.968;NA;1.8;1.8;-66;146
+Problematic;Propyl Formate;CCCOC=O;5;3;5;0.9;7.7;1.83;1.377;-92.9;80.8
+Recommended;Ethyl Acetate;CC(=O)OCC;3;3;5;0.895;6;1.78;1.372;-83.6;77.2
+Recommended;Dimethyl Carbonate;COC(=O)OC;3;1;4;1.063;3.2;0.93;1.368;4;90.3
+Problematic;Cyclohexanone;O=C1CCCCC1;5;2;3;0.948;16;3.06;1.451;-32.1;155.8
+Recommended;1-Heptanol;CCCCCCCO;5;2;1;0.82;NA;1.74;1.42;-34;176.2
+Problematic;Pentan-3-one;CCC(=O)CC;5;2;5;0.809;17.5;2.7;1.392;-39;102
+Recommended;PnP Glycol Ether [1-Propoxy-2-propanol];CCCOC(C)CO;5;2;2;0.885;NA;NA;NA;-80;149
+Recommended;Ethane-1,2-diyl diacetate [Ethylene glycol diacetate];CC(=O)OCCOC(=O)C;5;1;1;1.1;NA;2.34;1.42;-31;190.5
+Recommended;iso-Propyl Acetate;CC(=O)OC(C)C;3;2;4;0.87;NA;1.75;1.38;-73.4;88.5
+Problematic;PPh Glycol Ether [Propylene glycol phenyl ether];CCCOC(C)C(=O)OC;7;2;1;1.063;NA;NA;NA;19;243
+Recommended;n-Propyl acetate;CCCOC(=O)C;3;2;4;0.883;6;1.79;1.384;-95;101.6
+Problematic;Butyl Formate;CCCCOC=O;5;2;5;0.89;NA;2.03;1.39;-91.9;106.1
+Problematic;Triacetin [1,2,3-triacetoxypropane];CC(=O)OCC(OC(=O)C)COC(=O)C;7;1;2;1.155;7;2.73;1.428;4.1;258
+Recommended;MIBK [Methyl iso-Butyl Ketone or 4-Methyl-2-pentanone];CC(=O)CC(C)C;3;2;4;0.798;13.1;2.69;1.396;-84.7;116.2
+Highly Hazardous;Diethyl Ether [Ether];CCOCC;7;3;10;0.708;4.4;1.11;1.352;-116.3;34.7
+Recommended;Diethyleneglycol diethyl ether;CCOCCOCCOC;5;3;2;0.906;5.7;1.96;1.412;-44.3;189.3
+Problematic;1,1-Dichloroethane;CC(Cl)Cl;5;3;5;1.168;10;2.35;1.416;-97;57.3
+Hazardous;MTBE [tert-Butylmethylether];COC(C)(C)C;5;3;8;0.735;4.5;1.36;1.369;-108.6;55.2
+Recommended;Tetrahydrothiophene;C1CCSC1;3;2;5;0.994;8.6;1.89;1.529;-96.2;119.2
+Problematic;PnB Glycol Ether [3-Butoxypropan-2-ol];CCCCOCCO;7;1;2;0.879;NA;NA;NA;-80;171
+Problematic;Acetophenone;CC(=O)c1ccccc1;7;2;1;1.028;18.2;3.05;1.534;19.6;201.6
+Recommended;iso-Butyl Acetate;CC(=O)OCC(C)C;3;2;4;0.87;5.6;1.87;1.39;-98.9;117.3
+Problematic;CPME [Cyclopentyl Methyl Ether];CC1CCOC1;5;2;7;0.86;4.8;1.27;1.419;-140;106
+Problematic;TPM Glycol Ether [Tripropylene glycol methyl ether];COCC(C)OCC(C)OCC(C)O;7;1;1;0.966;NA;3.57;1.43;-78;243
+Recommended;n-Butyl Acetate;CCCCOC(=O)C;3;2;4;0.876;5;1.86;1.394;-73.5;125.9
+Problematic;Triethoxymethane [Triethyl orthoformate];CCOC(OCC)OCC;5;1;5;0.891;NA;NA;1.391;-61;145
+Recommended;Thiophene;c1ccsc1;3;3;6;1.059;2.7;0.56;1.529;-38.1;84.1
+Recommended;Isopentyl Acetate [Isoamyl acetate];CC(C)CCOC(=O)C;5;1;3;0.866;4.6;1.84;1.401;-78.5;142.1
+Recommended;Butyl Cellosolve Acetate;CCCCOCCO(C=O)C;5;2;1;0.942;NA;NA;1.413;-64;191.7
+Recommended;n-Pentyl Acetate;CCCCCOC(=O)C;5;2;3;0.88;NA;1.93;1.4;-70.8;146
+Hazardous;Di-isopropylether;CC(C)OC(C)C;5;3;9;0.719;4;1.13;1.368;-85.5;68.3
+Recommended;TAME [tert-amyl methyl ether];COC(C)(C)CC;3;2;6;0.766;NA;0;1.388;-80;86.3
+Recommended;Anisole;COc1ccccc1;5;1;4;0.989;4.5;1.36;1.517;-37.5;152
+Problematic;Chlorobenzene;c1ccc(Cl)cc1;7;2;3;1.106;5.7;1.72;1.525;-45.6;131.7
+Problematic;Hexyl Acetate;CCCCCCOC(=O)C;5;1;4;0.87;NA;1.8;1.41;-80.9;171.6
+Recommended;n-Pentyl Propionate;CCCCCOC(=O)CC;5;2;3;0.726;NA;NA;NA;NA;165
+Problematic;Bromobenzene;c1ccc(Br)cc1;7;2;3;1.488;5.6;1.74;1.557;-30.8;155.9
+Problematic;Butyl Carbitol Acetate [2-(2-Butoxyethoxy)ethyl acetate];CCCCOCCOCCO(C=O)C;7;2;1;0.977;NA;NA;1.426;-32;246.7
+Problematic;1,2-Dichlorobenzene;c1ccc(Cl)c(Cl)c1;7;2;2;1.3;10.4;2.53;1.552;-17;180.5
+Hazardous;Methylcyclopentane;CC1CCCC1;3;3;8;0.74;NA;0;1.41;-142.4;71.9
+Recommended;n-Propyl Propionate;CCCOC(=O)CC;3;2;4;0.732;;1.79;1.39;-75.9;122.4
+Recommended;Ethylbenzene;CCc1ccccc1;3;2;5;0.863;2.4;0.58;1.496;-95;136.2
+Problematic;iso-Hexane [2-Methylpentane];CC(C)CCC;7;3;6;0.65;NA;0;1.372;-153.6;60.3
+Hazardous;n-Pentane;CCCCC;7;3;8;0.621;1.8;0;1.358;-129.7;36.1
+Problematic;Cyclohexane;C1CCCCC1;7;3;6;0.778;2;0;1.426;6.7;80.7
+Problematic;p-Xylene;Cc1ccc(C)cc1;5;2;4;0.857;2.3;0;1.496;13.3;138.4
+Problematic;Methylcyclohexane;CC1CCCCC1;7;2;6;0.765;2;0;1.423;-126.6;100.9
+Problematic;Isopropylbenzene;CC(C)c1ccccc1;7;2;4;0.857;2.4;0.65;1.496;-96;152.4
+Recommended;Ethylcyclohexane;CCC1CCCCC1;3;2;5;0.78;NA;0;1.43;-111.3;129.9
+Recommended;1,2,3,4,5-Pentafluoro-6-(trifluoromethyl)benzene [Perfluorotoluene];FC1=C(F)C(F)=C(F)C(F)=C1C(F)(F)F;5;2;2;1.666;NA;NA;1.368;-66;104
+Problematic;Mesitylene [1,3,5-Trimethylbenzene];Cc1cc(C)cc(C)c1;7;2;4;0.861;2.3;0.1;1.499;-44.7;164.7
+Problematic;Butylbenzene;CCCCc1ccccc1;7;2;4;0.86;NA;0.37;1.49;-87.9;183.3
+Problematic;1-Methyl-4-(prop-1-en-2-yl)cyclohex-1-ene [D-Limonene];CC1=CCC(CC1)C(=C)C;7;2;4;0.84;NA;1.57;1.47;-74.2;176.5
+Problematic;n-Heptane;CCCCCCC;7;2;6;0.679;1.9;0;1.388;-90.6;98.4
+Problematic;n-Octane;CCCCCCCC;7;2;5;0.699;1.9;0;1.397;-56.8;123
+Problematic;Benzyl Benzoate;C1=CC=C(C=C1)COC(=O)C2=CC=CC=C2;7;2;1;1.11;NA;0;1.57;19.4;323.5
+Problematic;Diphenyl Ether;c1ccc(Oc2ccccc2)cc1;7;2;3;1.075;3.7;1.17;1.581;26.9;258.4
+Problematic;n-Nonane;CCCCCCCCC;7;2;4;0.714;2;0.07;1.405;-53.5;148.8
+Problematic;Decane;CCCCCCCCCC;5;2;4;0.726;2;0.07;1.412;-29.6;172.5
+Recommended;Perfluorodecalin;C1(F)(F)C2(F)(F)C(F)(F)C(F)(F)C1(F)C1(F)C(F)(F)C(F)(F)C2(F)C1(F)F;3;2;1;1.937;1.9;0;1.315;-10;142
+Problematic;Octamethyltrisiloxane [MDM];C[Si](C)(C)O[Si](C)(C)O[Si](C)(C)C;7;1;4;0.82;NA;NA;1.384;-82;153
+Recommended;Decamethyltetrasiloxane [MD2M];C[Si](C)(C)O[Si](C)(C)O[Si](C)(C)O[Si](C)(C)C;5;2;2;0.854;NA;NA;1.389;-68;194
+Problematic;Decamethylcyclopentasiloxane [D5];C[Si]1(C)O[Si](C)(C)O[Si](C)(C)O[Si](C)(C)O[Si](C)(C)O1;7;1;2;0.95;NA;1.35;1.398;-38;370.8
+Problematic;Propan-1-ol;CCCO;3;4;5;0.804;20.5;1.65;1.386;-126.2;97.2
+Problematic;Tetrahydrothiophene 1-oxide;O=S1CCCC1;7;5;2;1.168;42.8;4.17;1.521;NA;236
+Problematic;Pyridazine;c1ccnnc1;7;5;2;1.105;NA;NA;1.524;-8;222.6
+Recommended;Butan-1-ol;CCCCO;3;4;3;0.81;17.5;1.74;1.399;-88.6;117.7
+Problematic;Dihydrofuran-2(3H)-one [Butyrolactone];CC(C)c1ccc(C)cc1;7;4;1;1.125;41;4.27;1.437;-43.4;204.4
+Recommended;iso-Butanol [2-Methylpropan-1-ol];CC(C)CO;3;4;3;0.794;17.9;1.64;1.396;-108;107.8
+Recommended;NEP [1-Ethylpyrrolidin-2-one];O=C1CCCCN1C;3;4;2;0.992;NA;NA;NA;NA;97
+Recommended;Pyrrole;c1cc[nH]c1;3;6;3;0.966;8;1.71;1.509;-23.4;129.9
+Problematic;(2,2-Dimethyl-1,3-dioxolan-4-yl)methanol;CC1(C)OCC(CO)O1;7;5;2;1.064;NA;NA;1.434;-27;189
+Problematic;Pyrimidine;c1cncnc1;5;5;4;1.079;NA;2.33;1.496;21;123.5
+Problematic;DMPU [1,3-dimethyltetrahydropyrimidin-2(1H)-one];CN1CCCC(=O)N(C)C1;7;6;1;1.056;NA;NA;1.489;-23;244.6
+Problematic;DMI [1,3-dimethylimidazolidin-2-one];CN1C(=O)C=CC1=O;7;6;1;1.058;NA;NA;1.472;8;225
+Problematic;Nitroethane;CC[N+](=O)[O-];3;6;4;1.045;29;3.61;1.391;-89.5;114
+Problematic;1-Methylazepan-2-one [N-Methylcaprolactam];CN1CCCCCC1=O;7;5;2;1.013;NA;4.23;1.483;NA;107
+Problematic;5-Methyldihydrofuran-2(3H)-one [gamma-valerolactone];CC1CCC(=O)O1;7;5;1;1.103;36.1;4.3;1.457;-31;207.5
+Recommended;Ethyl Lactate;CC(O)C(=O)OCC;5;4;3;1.027;13.1;2.55;1.412;-26;154
+Problematic;1-Hexanol;CCCCCCOH;5;5;3;0.82;NA;1.65;1.42;-44.6;157
+Problematic;Pentane-2,4-dione [Acetylacetone];CC(=O)CC(=O)C;5;6;3;0.972;25.7;3.03;1.451;-23.2;140.4
+Problematic;Ethyl Formate;CCOC=O;5;6;5;0.915;7.2;1.94;1.36;-76.9;54.2
+Problematic;Butyronitrile;CCCC#N;5;6;5;0.787;24.6;4.07;1.383;-111.9;117.5
+Problematic;Aniline;Nc1ccccc1;7;6;1;1.022;7.2;1.51;1.586;-6;184.4
+Problematic;EPh Glycol Ether [2-phenoxyethanol];CCOc1ccccc1;7;5;1;1.11;NA;NA;1.537;15;244
+Problematic;1,3,2-Dioxathiolane-2-oxide;O=S1OCCO1;7;5;1;1.429;NA;NA;NA;NA;159
+Problematic;1,8-Diazabicycloundec-7-ene [DBU];C1CCN=C2CCCCN2CC1;5;6;5;1.018;NA;NA;1.523;-70;261
+Problematic;DMI [Dimethyl isosorbide];COC1COC2C1OCC2OC;5;5;1;1.165;NA;NA;1.463;-70;393
+Problematic;1,2-Dimethoxypropane;COC(C)OC;5;5;6;0.855;NA;NA;1.385;NA;96
+Hazardous;1,4-Dioxane;C1COCCO1;3;6;7;1.028;2.3;0.46;1.422;11.8;101.3
+Problematic;Dimethyl Sulfite;COS(=O)OC;5;5;4;1.207;21.9;2.84;1.409;NA;126.5
+Problematic;3-Methyl-2-butanone [MIPK, Methyl isopropyl ketone];CC(C)C(=O)C;5;5;5;0.805;16.6;2.79;1.388;-92;94.2
+Problematic;4-Methylcyclohexanemethanol [MCHM];CC1CCC(CO)CC1;5;5;1;0.907;NA;NA;NA;NA;202
+Problematic;Ethyl 3-oxobutanoate [Ethyl acetoacetate, EAA];CC(=O)CC(=O)OCC;5;5;2;1.02;15.7;2.96;1.421;-39;180.9
+Problematic;DPM Glycol Ether [Dipropylene glycol methyl ether];CC(OC)COCC(C)O;5;5;2;0.953;NA;2.47;1.42;-83;190
+Problematic;1-Nitropropane;CCC[N+](=O)[O-];5;6;4;1;NA;3.66;1.4;-104;131.2
+Problematic;2,2-Dimethyl-1,3-dioxolane;CC1(C)OCCO1;5;5;4;0.946;NA;NA;1.398;NA;92
+Problematic;2-Methylpyridine [2-Picoline];Cc1ccccn1;5;6;4;0.94;9.8;1.91;1.501;-66.7;129.4
+Problematic;Butoxytriglycol [3,6,9-Trioxatridecan-1-ol];CCCCOCCOCCOCCO;7;4;1;0.822;NA;NA;NA;-39;283
+Hazardous;Tetrahydropyran;C1CCOCC1;5;5;8;0.882;5.7;1.74;1.42;-49;88
+Recommended;Hexan-2-one [Methylbutylketone, MBK];CCCCC(=O)C;3;6;3;0.807;14.6;2.68;1.401;-55.8;127.5
+Problematic;3,5,5-Trimethylcyclohex-2-enone [Isophorone];CC1=CC(=O)CC(C)(C)C1;7;6;1;0.92;NA;3.99;1.48;-8.1;215.3
+Problematic;3,3-Dimethyl-2-butanone [MTBK];CC(=O)C(C)(C)C;5;5;4;0.801;12.7;2.79;1.395;-49.8;106.5
+Problematic;Benzonitrile;c1ccccc1C#N;7;6;1;1.001;25.2;4.28;1.528;-12.8;190.7
+Problematic;PGDA Glycol Ether [Propylene glycol diacetate];CC(OC)COC(=O)C;5;5;1;1.056;NA;NA;1.415;-75;190
+Problematic;(E)-1,2-Dichloroethene;ClC=CCl;7;6;5;1.276;9.2;2.95;1.449;-81.5;60.2
+Problematic;2-Methylcyclohexanone;CC1CCCCC1=O;5;5;3;0.925;NA;NA;1.448;-14;162
+Problematic;Ethyl propionate;CCC(=O)OCC;5;5;4;0.88;NA;1.75;1.38;-73.9;99
+Problematic;2,6-Dimethylpyridine [2,6-Lutidine];Cc1cccc(C)n1;5;5;4;0.918;7.3;1.68;1.497;-6.2;144.1
+Problematic;Methyl Butyrate;CCCC(=O)OC;5;5;4;0.891;5.5;1.72;1.386;-85.8;102.8
+Problematic;Hexanenitrile;CCCCCC#N;5;5;4;0.801;17.3;3.48;1.407;-80.3;163.6
+Problematic;2,2-Dimethoxypropane;COC(C)OC;5;6;6;0.848;NA;NA;1.378;-47;81
+Problematic;1,2-Diacetoxypropane;CC(OC(=O)C)COC(=O)C;5;5;1;1.06;NA;NA;1.413;-31;186
+Problematic;Dimethyl Adipate;COC(=O)CCCCC(=O)OC;5;5;1;1.063;NA;NA;1.428;8;109.5
+Problematic;2-Ethylhexanol;CCCCC(CC)CO;5;5;1;0.692;NA;1.76;1.43;-70;184.6
+Problematic;1,1,2-Trichloroethane;ClCC(Cl)Cl;5;6;2;1.432;7.3;1.36;1.471;-35.5;113.8
+Problematic;DPnP Glycol Ether [1-(1-propoxypropan-2-yloxy)propan-2-ol];CCCOC(C)COC(C)CO;7;5;1;0.911;NA;NA;;-75;213
+Problematic;Tetramethoxymethane;COC(OC)(OC)OC;5;5;6;1.023;NA;NA;1.385;-5;114
+Problematic;2-Methoxy-1-[(1-methoxy-2-propanyl)oxy]propane [Propylene Glycol Dimethyl Ether];CC(COC)OC;5;5;2;0.953;NA;NA;NA;NA;NA
+Problematic;Dipropylene Glycol Dimethyl Ether;COC(C)COC(C)COC;5;5;2;0.903;NA;NA;NA;-71;175
+Problematic;Hexyl Carbitol [2-[2-(Hexyloxy)ethoxy]ethanol];CCCCCCOCCOCCOH;7;4;2;0.932;NA;NA;1.438;-34;254
+Problematic;Ethyl butyrate;CCCC(=O)OCC;5;5;3;0.87;NA;1.91;1.39;-98;120.9
+Problematic;2,2,4-Trimethyl-1,3-pentanediol 1-isobutyrate;CC(C)C(=O)OCC(C)(C)CC(C)O;7;5;2;0.787;NA;NA;NA;NA;255
+Recommended;Diethyl Carbonate;CCOC(=O)OCC;3;5;2;0.969;2.9;1.07;1.384;-43;126.5
+Problematic;N-Methylaniline;CNc1ccccc1;7;6;1;0.982;5.9;1.73;1.571;-57;195.9
+Problematic;2,4-Dimethyl-3-pentanone [Diisopropyl ketone];CC(C)C(=O)C(C)C;5;5;4;0.799;17.1;2.76;1.4;-69;125.3
+Problematic;1,3-Dithiolane;C1CSCS1;7;5;2;1.235;NA;NA;1.599;NA;183
+Problematic;Ethyl 3-Ethoxypropionate;CCOCCCC(=O)OCC;5;5;3;0.789;NA;0;1.4;NA;169.7
+Problematic;(Z)-1,2-Dichloroethene;ClC=CCl;5;6;5;1.246;2.3;0;1.446;-49.4;47.7
+Problematic;1-Nonanol;CCCCCCCCCOH;7;5;1;0.82;NA;1.61;1.43;-5;213.5
+Problematic;2-Methyltetrahydrofuran [2-MeTHF];CC1CCCO1;3;5;6;0.86;7;1.06;1.408;-136;80
+Problematic;Fluorobenzene;Fc1ccccc1;5;6;5;1.023;5.6;1.61;1.465;-42.2;85.3
+Problematic;DPnB Glycol Ether [Dipropylene glycol n-butyl ether];CCCCOCCOCCO;7;5;1;0.911;NA;NA;NA;-75;230
+Hazardous;Di-n-propylether;CCCOCCC;5;5;8;0.736;3.4;1.12;1.381;-123.2;90.1
+Problematic;Methyl benzoate;COC(=O)c1ccccc1;5;5;1;1.084;6.6;1.92;1.517;-12.4;199.1
+Problematic;DPMA Glycol Ether [Dipropylene glycol methyl ether acetate];CC(OC)COC(C)C(=O)OC;5;5;2;0.979;NA;0;NA;-25;209
+Problematic;N-Ethylaniline;CCNc1ccccc1;7;6;2;0.96;NA;1.7;1.56;-63.5;204.9
+Problematic;Pentachloroethane;ClC(Cl)C(Cl)(Cl)Cl;7;6;2;1.673;3.9;0.92;1.503;-29;159.9
+Problematic;Benzotrifluoride;FC(F)(F)c1ccccc1;7;5;5;1.18;NA;2.86;1.41;-29;102.1
+Hazardous;Cyclopentane;C1CCCC1;7;6;8;0.74;2;0;1.406;-93.8;49.2
+Problematic;N,N-Dimethylaniline;CN(C)c1ccccc1;7;6;1;0.952;4.9;1.61;1.559;2;193
+Problematic;Iodobenzene;Ic1ccccc1;5;5;2;1.831;4.8;1.71;1.62;-31.4;188.3
+Problematic;5-Nonanone;CCCCC(=O)CCCC;5;5;1;0.818;10.6;2.71;1.42;-4.8;188.5
+Problematic;2,6-Dimethyl-4-heptanone [Diisobutyl ketone];CC(C)CC(=O)CC(C)C;5;5;3;0.805;9.9;2.66;1.412;-46;168.4
+Problematic;Toluene;Cc1ccccc1;3;6;5;0.862;2.4;0.38;1.47;-95;110.6
+Problematic;Ethoxybenzene [phenetole];CCOc1ccccc1;5;5;4;0.96;4.2;1.41;1.507;-29.5;169.8
+Problematic;Tetrachloroethene;ClC(=C(Cl)Cl)Cl;5;6;4;1.614;2.3;0;1.506;-22.4;119.1
+Problematic;Di-n-butylether;CCCCOCCCC;5;5;5;0.742;3.2;1.18;1.399;-95.2;142
+Problematic;1,3-Dichlorobenzene;Clc1cccc(Cl)c1;7;5;2;1.283;5.2;1.68;1.546;-24.8;171.2
+Problematic;TPnB Glycol Ether [Tripropylene glycol n-butyl ether];CCCCOCCOCCOCCO;7;5;1;0.93;NA;NA;NA;-75;274
+Problematic;N-Ethyl-N-isopropylpropan-2-amine [Diispropylethylamine, Hunig's Base];CCN(C(C)C)C(C)C;3;6;5;0.747;NA;NA;1.414;-50;126.5
+Problematic;Indane;c1ccc2CCCc2c1;5;5;4;0.96;NA;0.54;1.54;-51.4;178
+Problematic;(Trifluoromethoxy)benzene [Trifluoromethylphenyl ether];FC(F)(F)Oc1ccccc1;5;5;6;1.226;NA;NA;1.406;NA;103
+Problematic;Perfluorobenzene;FC1=C(F)C(F)=C(F)C(F)=C1F;5;6;5;1.607;2.1;0;1.377;5.1;80.3
+Problematic;Tetraethylsulfamide [TES];CCN(CC)S(=O)(=O)N(CC)CC;7;5;2;1.037;NA;NA;1.448;NA;250
+Problematic;Tetralin;c1ccc2c(c1)CCCC2;7;6;3;0.966;2.8;0.61;1.541;-35.8;205.6
+Problematic;p-Cymene;CC1=CC=C(C=C1)C(C)C;5;5;4;0.86;NA;0;1.49;-67.9;177.1
+Problematic;Hexamethyldisiloxane [M2];C[Si](C)(C)O[Si](C)(C)C;7;5;6;0.76;NA;0.66;1.377;-68;100.5
+Problematic;Octamethylcyclotetrasiloxane [D4];C[Si]1(C)O[Si](C)(C)O[Si](C)(C)O[Si](C)(C)O1;7;6;4;0.95;NA;0.66;1.396;17.7;175
+Hazardous;Formamide;NC=O;7;9;1;1.133;111;3.36;1.448;2.6;210
+Hazardous;2,2,2-Trifluoroacetic Acid [TFA];FC(F)(F)C(=O)O;5;8;1;1.54;NA;1.28;1.385;-15.4;71.8
+Problematic;Formic Acid;O=CO;3;7;3;1.22;55;1.41;1.37;8.4;100
+Hazardous;N-Methylformamide;CNC=O;5;9;1;1.01;182.4;3.87;1.432;-3.8;182
+Problematic;1,2-Diaminoethane;NCCN;5;7;3;0.899;12.9;1.9;1.457;11.1;117
+Recommended;Methanol;CO;5;7;4;0.791;32.7;1.71;1.328;-97.7;64.5
+Problematic;Ethanolamine [2-Aminoethanol];NCCO;5;7;1;1.018;37.7;2.28;1.455;10.5;170.4
+Hazardous;N-Methylacetamide;CC(=O)NC;7;9;1;0.957;191.3;3.72;1.425;28;205
+Problematic;Acetic Acid;CC(=O)O;3;7;3;1.049;6.2;1.68;1.372;16.7;117.9
+Hazardous;1,1,1,3,3,3-Hexafluoropropan-2-ol;OC(C(F)(F)F)C(F)(F)F;5;8;1;1.596;NA;NA;1.275;-4;57.5
+Problematic;Propanoic Acid;CCC(=O)O;3;7;3;0.99;3.2;1.75;1.38;-20.7;140.8
+Hazardous;2,2,2-Trifluoroethanol;OCC(F)(F)F;5;10;3;1.391;NA;NA;NA;-45;74
+Hazardous;TMU [1,1,3,3-Tetramethylurea];CN(C)C(=O)N(C)C;5;9;1;0.962;24.5;3.51;1.449;-1.2;175.2
+Problematic;Isobutyric acid;CC(C)C(=O)O;5;7;3;0.94;NA;1.09;1.39;-46;154.7
+Hazardous;Methyl Cellosolve [2-Methoxyethanol];COCCO;3;9;3;0.965;16.9;2.04;1.402;-85.1;124.5
+Hazardous;DMF [N,N-Dimethylformamide];CN(C)C=O;5;9;3;0.945;37.1;3.79;1.431;-60.4;153
+Hazardous;DMA [N,N-Dimethylacetamide];CC(=O)N(C)C;5;9;1;0.937;38.3;3.78;1.438;-20;166.1
+Hazardous;Isopropylamine;CC(C)N;7;8;5;0.68;NA;1.45;1.37;-95.2;32.4
+Hazardous;Sulfolane;O=S1(=O)CCCC1;7;9;1;1.264;42.1;4.68;1.482;28.5;287.3
+Problematic;Morpholine;C1COCCN1;3;7;4;0.995;7.7;1.71;1.454;-4.8;128.2
+Hazardous;NMP [N-Methylpyrrolidone];O=C1CCCN(C)1;7;9;1;1.026;32.6;3.75;1.47;-24.4;202
+Hazardous;n-Propylamine;CCCN;7;8;7;0.71;NA;1.17;1.39;-83;48.5
+Hazardous;2-Ethoxyethanol;CCOCCO;4;9;4;0.93;NA;2.08;1.407;-90;135.6
+Hazardous;Proprionitrile;CCC#N;5;9;5;0.777;28.9;4.04;1.366;-92.8;97.4
+Problematic;Pyrrolidine;C1CCNC1;3;7;4;0.85;NA;1.58;1.44;-57.8;86.6
+Hazardous;1,3-Dioxolane;C1OCOCO1;5;10;7;1.059;NA;1.19;1.404;NA;75.6
+Hazardous;Methyl Formate;COC=O;7;7;6;0.967;8.7;1.77;1.343;-99;31.5
+Hazardous;2-Methyl-1-propanamine [Isobutylamine];CC(C)CN;5;8;5;0.73;NA;1.27;1.39;-84.6;67.7
+Hazardous;2-Amino-2-methylpropane [tert-Butylamine];CC(C)(C)N;7;8;8;0.69;NA;1.29;1.38;-67;44.4
+Hazardous;1-Butylamine;CCCCN;5;10;5;0.73;NA;1.39;1.4;-49.1;77.4
+Hazardous;Furfural;O=CC1=CC=CO1;5;9;2;1.15;NA;3.6;1.52;-36.5;161.7
+Hazardous;Hexanedinitrile;N#CCCCCCC#N;7;9;1;0.95;NA;3.75;1.44;2.4;295
+Problematic;n-Pentylamine;CCCCCN;5;7;5;0.75;NA;1.55;1.41;-55;104.5
+Problematic;Acetic Anhydride;CC(=O)OC(=O)C;3;7;3;1.082;20.7;2.82;1.39;-73.1;139
+Problematic;THF [Tetrahydrofuran];C1CCCO1;5;7;6;0.881;7.5;1.69;1.407;-108.4;67
+Highly Hazardous;HMPA;CN(C)P(=O)(N(C)C)N(C)C;7;9;1;1.024;29;4.19;1.459;7;233
+Problematic;Piperidine;C1CCNCC1;3;7;5;0.857;5.8;0.73;1.453;-10.5;106.5
+Hazardous;Glyme [DME or 1,2-Dimethoxyethane];COCCOC;3;10;7;0.864;7.2;1.61;1.38;-69;84.5
+Problematic;Benzylamine;NCc1ccccc1;5;7;1;0.98;NA;1.38;1.54;-46;184.5
+Problematic;Cyclohexylamine;NC1CCCCC1;3;7;3;0.862;4.4;1.31;1.456;-17.7;134.5
+Hazardous;Diglyme [Diethyleneglycol dimethyl ether];COCCOCCOC;5;9;3;0.938;7.3;1.92;1.408;-64;159.8
+Hazardous;Triglyme [Triethyleneglycol dimethyl ether];COCCOCCOCCOC;7;9;3;0.98;7.5;2.16;1.426;-43.8;216
+Hazardous;Diethylamine;CCNCC;5;7;8;0.702;3.9;1.03;1.385;-49.8;55.6
+Highly Hazardous;DCM [Dichloromethane];ClCCl;7;7;1;1.317;9;1.6;1.424;-94.9;39.7
+Hazardous;2-Nitropropane;CC(C)[N+](=O)[O-];5;9;4;0.983;27.3;3.76;1.394;-103.4;131.2
+Hazardous;2-Ethoxyethyl Acetate;CCOCCOC(=O)C;5;9;4;0.97;NA;2.25;1.4;-61.7;156.3
+Hazardous;Chloroform;ClC(Cl)Cl;5;7;2;1.48;4.9;1.02;1.446;-63.2;61.2
+Highly Hazardous;1,2-Dichloroethane;ClCCCl;3;10;4;1.246;10.7;1.6;1.445;-35.7;83.7
+Hazardous;Nitrobenzene;O=[N+]([O-])c1ccccc1;7;9;2;1.198;36.1;4.23;1.556;5.8;210
+Hazardous;Quinoline;c1ccc2ncccc2c1;7;9;2;1.093;9;2.25;1.627;-14.9;237.7
+Hazardous;1,1,2,2-Tetrachloroethane;ClC(Cl)C(Cl)Cl;7;9;2;1.587;8.4;1.33;1.494;-42.5;146.3
+Problematic;DiIodomethane;ICI;5;7;2;3.308;5.3;1.15;1.74;6.1;182
+Hazardous;1,1-Dichloroethene;ClC(=C)Cl;7;7;6;1.175;4.8;1.25;1.425;-122.6;31.6
+Hazardous;Furan;c1ccoc1;7;10;8;0.931;2.9;0.69;1.421;-85.6;31.4
+Problematic;Dipropylamine;CCCNCCC;5;7;5;0.73;NA;1.07;1.4;-63;109.3
+Hazardous;Diisopropylamine;CC(C)NC(C)C;5;8;6;0.71;3;1.02;1.392;-96.3;83.9
+Highly Hazardous;Carbon Disulfide;S=C=S;7;7;9;1.263;2.6;0;1.623;-111.6;46.2
+Hazardous;Dibutylamine;CCCCNCCCC;3;9;3;0.76;NA;0.98;1.42;-62;159.6
+Hazardous;Triethylamine;CCN(CC)CC;3;7;6;0.728;2.5;0.72;1.401;-114.7;89.5
+Hazardous;1,1,1-Trichloroethane;CC(Cl)(Cl)Cl;10;7;6;1.339;7.3;1.9;1.438;-30.4;74.1
+Hazardous;Trichloroethene;ClC(Cl)=CCl;3;9;4;1.464;3.4;0.9;1.477;-86.4;87.1
+Highly Hazardous;Benzene;c1ccccc1;3;10;6;0.879;2.3;0;1.501;5.5;80.1
+Hazardous;2,2,2-trifluoroacetic Anhydride [TFAA];O=C(OC(=O)C(F)(F)F)C(F)(F)F;7;8;7;1.503;NA;NA;1.269;-65;39.5
+Highly Hazardous;Tetrachloromethane [Carbon Tetrachloride];ClC(Cl)(Cl)Cl;10;7;2;1.584;2.3;0;1.46;-22.8;76.5
+Hazardous;n-Hexane;CCCCCC;7;7;8;0.655;1.9;0;1.375;-95.3;68.7
+Hazardous;cis-Decalin;C1CCC2CCCCC2C1;7;7;4;0.897;2.2;0;1.481;-43;195.8
+Hazardous;Tributylamine;CCCCN(CCCC)CCCC;7;9;2;0.774;2.3;0.76;1.429;-70;213.4
