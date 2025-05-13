@@ -405,7 +405,7 @@ def get_solvents_for_reaction(rxn_name):
     response_stripped = response.text.strip()
     return response_stripped
 
-def rank_similar_solvents(target_smiles, data_path='SHE_data_with_smiles.csv', n_recommendations=5):
+def rank_similar_solvents(target_smiles, data_path='../data/Solvant_properties_with_smiles.csv', n_recommendations=5):
     """
     Find solvents with similar physical properties to the target solvent and rank them.
     
@@ -423,7 +423,6 @@ def rank_similar_solvents(target_smiles, data_path='SHE_data_with_smiles.csv', n
     dict of pandas DataFrames containing ranked alternatives or error message if SMILES not found
     """
     # Load the data
-
     df = pd.read_csv(data_path, sep=';')
     
     # Check if SMILES exists in the dataset
@@ -447,10 +446,11 @@ def rank_similar_solvents(target_smiles, data_path='SHE_data_with_smiles.csv', n
     for column in ranking_columns:
         df_working[column] = pd.to_numeric(df_working[column], errors='coerce')
     
-    # Filter out hazardous and highly hazardous compounds
+    # Filtering the data
+    #Hazardous
     df_filtered = df_working[~df_working['Adjusted ranking'].isin(['Hazardous', 'Highly Hazardous'])].copy()
     
-    # Strict filtering for all ranking scores (must be ≤ 5)
+    #Too high envirement/heath/safety ranking
     mask = (
         (df_filtered['Environment Ranking'] <= 5) &
         (df_filtered['Health Ranking'] <= 5) &
@@ -458,18 +458,16 @@ def rank_similar_solvents(target_smiles, data_path='SHE_data_with_smiles.csv', n
     )
     df_filtered = df_filtered[mask].copy()
     
-    # Check if we still have solvents after filtering
     if len(df_filtered) == 0:
         return "Error: No solvents found meeting safety and environmental criteria (scores ≤ 5)."
     
-    # Check the physical state and create temperature range filters
+    # Physical state outside the target solvant
     target_melting = target['Melting point']
     target_boiling = target['Boiling point']
     
-    # Important: Use df_filtered instead of df for temperature compatibility check
     df_filtered['temp_range_compatible'] = (
-        (df_filtered['Melting point'] <= target_melting + 25) &  # Melting point not more than 25°C higher
-        (df_filtered['Boiling point'] >= target_boiling - 25)    # Boiling point not more than 25°C lower
+        (df_filtered['Melting point'] <= target_melting + 15) &  # Melting point not more than 15°C higher
+        (df_filtered['Boiling point'] >= target_boiling - 15)    # Boiling point not more than 15°C lower
     )
     
     # Filter based on temperature criteria
@@ -477,13 +475,10 @@ def rank_similar_solvents(target_smiles, data_path='SHE_data_with_smiles.csv', n
     
     # If no solvents match the temperature criteria, inform the user
     if len(df_filtered) == 0:
-        return f"Warning: No safe solvents found within ±25°C range of '{target_solvent}' (MP: {target_melting}°C, BP: {target_boiling}°C)"
+        return f"Warning: No safe solvents found within ±15°C range"
     
     # Calculate similarity scores based on physical properties
-    # We'll compute a weighted Euclidean distance for the properties we care about
-    
-    # Define the properties to compare and their weights
-    # It is also possible to add more properties here like 
+    # The properties tested and their weights
 
     properties = {
         'Density': 0.1,
@@ -530,7 +525,6 @@ def rank_similar_solvents(target_smiles, data_path='SHE_data_with_smiles.csv', n
     # Create rankings
     # For each ranking, lower numbers are better
     
-    # Convert ranking columns to numeric using .loc
     ranking_columns = ['Environment Ranking', 'Health Ranking', 'Safety Ranking']
     for column in ranking_columns:
         top_similar.loc[:, column] = pd.to_numeric(top_similar[column], errors='coerce')
