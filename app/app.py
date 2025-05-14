@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from RetroGSF_functions import retrosynthesis_reaction_smiles, rank_similar_solvents
+from retrogsf import retrosynthesis_reaction_smiles, rank_similar_solvents
 
 # Titre de l'application
 st.title("🧪 RetroGSF - Outil de rétrosynthèse et substitution de solvants")
