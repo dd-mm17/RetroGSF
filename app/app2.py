@@ -1,45 +1,16 @@
 import streamlit as st
+from pathlib import Path
+from rdkit.Chem.Draw import IPythonConsole
+from rxn_insight.reaction import Reaction
+from dotenv import load_dotenv
+import os
 import pandas as pd
 import numpy as np
+from aizynthfinder.aizynthfinder import AiZynthExpander
 from rdkit import Chem
 from rdkit.Chem import Draw
 from PIL import Image, ImageDraw, ImageFont
-from retrogsf import retrosynthesis_reaction_smiles, rxn_info, get_solvents_for_reaction, rank_similar_solvents
-
-def retrosynthesis_reaction_smiles(smiles: str, config_path: str = "config.yml") -> pd.DataFrame:
-    return pd.DataFrame({
-        "reactants": ["CCO.CCBr"],
-        "products": [smiles],
-        "reaction_name": ["SN2_substitution"]
-    })
-
-def get_solvents_for_reaction(rxn_name):
-    return ["Ethanol", "Water"]
-
-def rank_similar_solvents(target_smiles, data_path='SHE_data_with_smiles.csv', n_recommendations=5):
-    data = {
-        'Name': ['Methanol', 'Acetone', 'DMSO'],
-        'SMILES': ['CO', 'CC(=O)C', 'CS(=O)C'],
-        'Density': [0.79, 0.79, 1.1],
-        'Dielectric': [33, 21, 47],
-        'Dipole': [1.7, 2.88, 4.0],
-        'Refractive Index': [1.328, 1.358, 1.479],
-        'Melting point': [-97, -95, 18],
-        'Boiling point': [65, 56, 189],
-        'Environment Ranking': [2, 3, 4],
-        'Health Ranking': [2, 3, 3],
-        'Safety Ranking': [1, 2, 3],
-        'Adjusted ranking': ['Recommended', 'Recommended', 'Recommended'],
-    }
-    df = pd.DataFrame(data)
-    return {
-        'target_solvent_properties': {'Name': 'Ethanol', 'Density': 0.789, 'Boiling point': 78},
-        'by_similarity': df[['Name','SMILES','Density', 'Dielectric', 'Dipole','Refractive Index', 'Melting point', 'Boiling point']],
-        'by_environment': df[['Name', 'Environment Ranking']],
-        'by_health': df[['Name', 'Health Ranking']],
-        'by_safety': df[['Name','Safety Ranking']],
-        'by_overall_ranking': df[['Name', 'Adjusted ranking','Environment Ranking']]
-    }
+from retrogsf import retrosynthesis_reaction_smiles, rxn_info, get_solvents_for_reaction, rank_similar_solvents, unmap_reaction_smiles
 
 # ==== RXN Drawing ====
 def draw_reaction_with_solvent(reactants, products, solvent_text):
@@ -58,35 +29,37 @@ def draw_reaction_with_solvent(reactants, products, solvent_text):
     return img_with_text
 
 # ==== APP STREAMLIT ====
-st.title("🧪 Retrosynthesis and Safer Solvent Recommendations")
+st.title("🧪 RetroGSF")
 
 smiles_input = st.text_input("Enter a product SMILES string:")
 
 if smiles_input:
     try:
-        # 1. Retrosynthèse
-        df = retrosynthesis_reaction_smiles(smiles_input)
-        reactants = df.iloc[0]["reactants"]
-        products = df.iloc[0]["products"]
-        rxn_name = df.iloc[0]["reaction_name"]
+        df = retrosynthesis_reaction_smiles(
+            smiles_input,
+            config_path="/Users/lealombard/Desktop/EPFL/BA4/prog/PPChem_Project/Lea's/aizynth-data/config.yml"
+        )
+        reaction_name = rxn_info(df)
+        rxn_smiles=df.iloc[0]['mapped_reaction_smiles']
+        unmapped_rxn = unmap_reaction_smiles(rxn_smiles)
+        reactants, reagents, products = unmapped_rxn.split('>')
 
-        # 2. Solvant principal proposé
-        solvents = get_solvents_for_reaction(rxn_name)
-        main_solvent = solvents[0] if solvents else "Unknown"
+        # Seperate reactants
+        reactant_mols = [Chem.MolFromSmiles(r) for r in reactants.split('.')]
+        st.subheader(f"Reaction Name or Class: {reaction_name}")
 
-        # 3. Dessin de la réaction avec solvant
+        solvents = get_solvents_for_reaction(reaction_name)
+
         st.subheader("🧪 Reaction with Suggested Solvent")
-        img = draw_reaction_with_solvent(reactants, products, main_solvent)
-        st.image(img, caption=f"Suggested solvent: {main_solvent}")
+        img = draw_reaction_with_solvent(products, reactants, solvents)
+        st.image(img, caption=f"Suggested solvent: {solvents}")
 
-        # 4. Appel à rank_similar_solvents
         st.subheader("🔬 Similar & Safer Solvent Recommendations")
-        results = rank_similar_solvents(main_solvent)
+        results = rank_similar_solvents(solvents)
 
         if isinstance(results, str):
             st.error(results)
-        else:
-            # Affichage sous forme d'onglets pour chaque DataFrame
+        else :
             tabs = st.tabs([
                 "🔍 Similarity-based",
                 "🌱 Environment Ranking",
