@@ -1,51 +1,92 @@
 import streamlit as st
+from pathlib import Path
+from rdkit.Chem.Draw import IPythonConsole
+from rxn_insight.reaction import Reaction
+from dotenv import load_dotenv
+import os
 import pandas as pd
-from retrogsf import retrosynthesis_reaction_smiles, rank_similar_solvents
+import numpy as np
+from aizynthfinder.aizynthfinder import AiZynthExpander
+from rdkit import Chem
+from rdkit.Chem import Draw
+from PIL import Image, ImageDraw, ImageFont
+from retrogsf import retrosynthesis_reaction_smiles, rxn_info, get_solvents_for_reaction, rank_similar_solvents, unmap_reaction_smiles
 
-# Titre de l'application
-st.title("🧪 RetroGSF - Outil de rétrosynthèse et substitution de solvants")
+# ==== RXN Drawing ====
+def draw_reaction_with_solvent(reactants, products, solvent_text):
+    rxn_smiles = f"{reactants}>>{products}"
+    rxn = Chem.rdChemReactions.ReactionFromSmarts(rxn_smiles, useSmiles=True)
+    img = Draw.ReactionToImage(rxn, subImgSize=(300, 150))
 
-# Saisie de l'utilisateur
-smiles_input = st.text_input("🔍 Entrez le SMILES du produit cible", "")
+    img_with_text = Image.new("RGBA", (img.width, img.height + 40), (255, 255, 255, 255))
+    draw = ImageDraw.Draw(img_with_text)
+    img_with_text.paste(img, (0, 40))
+
+    font = ImageFont.load_default()
+    text_width, _ = draw.textsize(solvent_text, font=font)
+    draw.text(((img.width - text_width) / 2, 10), solvent_text, fill="black", font=font)
+
+    return img_with_text
+
+# ==== APP STREAMLIT ====
+st.title("🧪 RetroGSF")
+
+smiles_input = st.text_input("Enter a product SMILES string:")
 
 if smiles_input:
-    st.subheader("🧬 Résultat de la rétrosynthèse")
     try:
-        # Étape 1 : rétrosynthèse
-        df_retro = retrosynthesis_reaction_smiles(smiles_input)
-        st.write("Voici les réactions en une étape générées :")
-        st.dataframe(df_retro[['reactants', 'product', 'mapped_reaction_smiles']])
-        
-        # Étape 2 : sélection d'un solvant cible dans les réactifs
-        st.subheader("🧴 Recherche de solvants similaires")
-        unique_reactants = df_retro['reactants'].unique().tolist()
-        selected_smiles = st.selectbox("Choisissez un SMILES de solvant cible parmi les réactifs :", unique_reactants)
-        
-        if selected_smiles:
-            # Étape 3 : recommandation de solvants
-            results = rank_similar_solvents(selected_smiles)
-            if isinstance(results, str):
-                st.error(results)
-            else:
-                st.write("✔️ Solvant cible :")
-                st.json(results['target_solvent_properties'])
+        df = retrosynthesis_reaction_smiles(
+            smiles_input,
+            config_path="/Users/lealombard/Desktop/EPFL/BA4/prog/PPChem_Project/Lea's/aizynth-data/config.yml"
+        )
+        reaction_name = rxn_info(df)
+        rxn_smiles=df.iloc[0]['mapped_reaction_smiles']
+        unmapped_rxn = unmap_reaction_smiles(rxn_smiles)
+        reactants, reagents, products = unmapped_rxn.split('>')
 
-                st.write("📊 Solvants similaires classés par similarité :")
+        # Seperate reactants
+        reactant_mols = [Chem.MolFromSmiles(r) for r in reactants.split('.')]
+        st.subheader(f"Reaction Name or Class: {reaction_name}")
+
+        solvents = get_solvents_for_reaction(reaction_name)
+
+        st.subheader("🧪 Reaction with Suggested Solvent")
+        img = draw_reaction_with_solvent(products, reactants, solvents)
+        st.image(img, caption=f"Suggested solvent: {solvents}")
+
+        st.subheader("🔬 Similar & Safer Solvent Recommendations")
+        results = rank_similar_solvents(solvents)
+
+        if isinstance(results, str):
+            st.error(results)
+        else :
+            tabs = st.tabs([
+                "🔍 Similarity-based",
+                "🌱 Environment Ranking",
+                "🩺 Health Ranking",
+                "⚠️ Safety Ranking",
+                "⭐ Overall Ranking"
+            ])
+
+            with tabs[0]:
+                st.write("Top solvents by **physical similarity**:")
                 st.dataframe(results['by_similarity'])
 
-                st.write("🌱 Classement par critères :")
-                col1, col2 = st.columns(2)
-                with col1:
-                    st.write("🟢 Environnement")
-                    st.dataframe(results['by_environment'])
-                with col2:
-                    st.write("❤️ Santé")
-                    st.dataframe(results['by_health'])
+            with tabs[1]:
+                st.write("Top solvents by **environmental impact**:")
+                st.dataframe(results['by_environment'])
 
-                st.write("🔥 Sécurité")
+            with tabs[2]:
+                st.write("Top solvents by **health impact**:")
+                st.dataframe(results['by_health'])
+
+            with tabs[3]:
+                st.write("Top solvents by **safety score**:")
                 st.dataframe(results['by_safety'])
 
-                st.write("⭐ Classement global")
+            with tabs[4]:
+                st.write("Top solvents by **overall ranking**:")
                 st.dataframe(results['by_overall_ranking'])
+
     except Exception as e:
-        st.error(f"Une erreur est survenue : {e}")
+        st.error(f"❌ Error: {e}")
