@@ -8,6 +8,7 @@ from rdkit.Chem.Draw import IPythonConsole
 from rxn_insight.reaction import Reaction
 from aizynthfinder.aizynthfinder import AiZynthExpander
 from dotenv import load_dotenv
+import re
 
 # Handle the Google Generative AI import more gracefully
 GENAI_AVAILABLE = False
@@ -78,6 +79,20 @@ def rxn_info (df: pd.DataFrame) -> str:
     else:
         name_class = info.get("CLASS", "Unknown")
     return name_class
+
+def unmap_reaction_smiles(rxn_smiles: str) -> str:
+    """
+    Remove atom-mapping numbers from a reaction SMILES string.
+
+    Args:
+        rxn_smiles (str): Mapped reaction SMILES (with [C:1], etc.)
+
+    Returns:
+        str: Unmapped reaction SMILES
+    """
+    # Supprime les numéros de mappage des atomes entre crochets
+    unmapped = re.sub(r':\d+\]', ']', rxn_smiles)
+    return unmapped
 
 def get_solvents_for_reaction(rxn_name):
     """
