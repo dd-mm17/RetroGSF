@@ -9,7 +9,7 @@ RetroGSF
 <br>
 
 
-Predict and evaluates a solvent for a retrosynthesized reaction (done by AiZynFinder)
+Predict and evaluates a solvent for a retrosynthesized reaction
 
 ## 🔥 Usage
 
@@ -19,29 +19,44 @@ from mypackage import main_func
 # One line to rule them all
 result = main_func(data)
 ```
+To use the applet...
 
-This usage example shows how to quickly leverage the package's main functionality with just one line of code (or a few lines of code). 
-After importing the `main_func` (to be renamed by you), you simply pass in your `data` and get the `result` (this is just an example, your package might have other inputs and outputs). 
-Short and sweet, but the real power lies in the detailed documentation.
 
 ## 👩‍💻 Installation
 
-Create a new environment, you may also give the environment a different name. 
+For the first time you will need to create a new environment, you may also give the environment a different name. 
 
 ```
 conda create -n retrogsf python=3.10 
 ```
 
+Then, activate your environment to install the package using pip:
 ```
 conda activate retrogsf
 (conda_env) $ pip install .
 ```
 
-If you need jupyter lab, install it 
+## Additional installations
+In order to use the streamlit applet you will need to have an Aizynthfinder config.yml file along with a Google AI Studios API keys.
 
+### config.yml file
+The config.yml file can be created using (where ```my_folder``` is the folder that you want download to): 
 ```
-(retrogsf) $ pip install jupyterlab
+download_public_data my_folder
 ```
+
+More information can be found found here: [Documentation](https://molecularai.github.io/aizynthfinder/#) or here [GithHub](https://github.com/MolecularAI/aizynthfinder?tab=readme-ov-file)
+
+The path to your config.yml file will need to be updated in the code at the following areas:
+
+
+### Google API key
+
+1.) Open the following link : (https://aistudio.google.com/app/apikey)
+
+2.) Click on "Get API key"
+
+3.) Create a .env file in the root folder with the following text : ```GEMINI_API_KEY="YOUR_API_KEY"```
 
 
 ## 🛠️ Development installation
