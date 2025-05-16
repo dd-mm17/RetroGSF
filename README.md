@@ -19,7 +19,9 @@ from mypackage import main_func
 # One line to rule them all
 result = main_func(data)
 ```
-To use the applet...
+To use the applet
+
+cd to git repository, open terminal and run ```streamlit run app.py```
 
 
 ## 👩‍💻 Installation
