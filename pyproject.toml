@@ -13,9 +13,10 @@ dependencies = [
     "numpy<2.0.0",  # Compatible with pandas
     "pandas>=1.5.0,<2.0.0",
     "rxn_insight",
-    "google-generativeai>=0.3.0",  # Specify minimum version
+    "google-generativeai>=0.3.0",
     "aizynthfinder>=4.3.0,<4.4.0",
     "python-dotenv",
+    "streamlit"
 ]
 authors = [
   {name = "Diego Meraldi", email = "diego.meraldi@epfl.ch"},
