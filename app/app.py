@@ -33,6 +33,7 @@ st.title("🧪 RetroGSF")
 
 smiles_input = st.text_input("Enter a product SMILES string:")
 
+
 if smiles_input:
     try:
         df = retrosynthesis_reaction_smiles(
@@ -50,9 +51,27 @@ if smiles_input:
 
         solvents = get_solvents_for_reaction(reaction_name)
 
+        # get_iupac_name function
+        import pandas as pd
+        import requests
+
+        def get_iupac_name(smiles):
+            try:
+                url = f"https://cactus.nci.nih.gov/chemical/structure/{smiles}/iupac_name"
+                response = requests.get(url)
+                if response.status_code == 200:
+                    return response.text.strip()
+                else:
+                    return "Name not found"
+            except Exception as e:
+                return f"Error: {str(e)}"
+
+        solvents_name = get_iupac_name(solvents)
+
         st.subheader("🧪 Reaction with Suggested Solvent")
-        img = draw_reaction_with_solvent(products, reactants, solvents)
-        st.image(img, caption=f"Suggested solvent: {solvents}")
+        img = draw_reaction_with_solvent(products, reactants, solvents) 
+        st.image(img, caption=f"Suggested solvent: { solvents_name}")
+
 
         st.subheader("🔬 Similar & Safer Solvent Recommendations")
         results = rank_similar_solvents(solvents)
