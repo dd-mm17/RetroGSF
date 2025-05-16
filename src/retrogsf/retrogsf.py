@@ -379,18 +379,18 @@ def get_solvents_for_reaction(rxn_name):
         'CCCCN(CCCC)CCCC']
 
     # Initialize the Gemini client
-    api_key = os.environ.get("GOOGLE_API_KEY")
+    api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
-        return "Error: GOOGLE_API_KEY environment variable not set"
+        return "Error: GEMINI_API_KEY environment variable not set"
     
     client = genai.Client(api_key=api_key)
     if not GENAI_AVAILABLE:
         return "O, CCO, CC#N"  # Return default solvents for testing
         
     # Load API key from environment variable
-    api_key = os.getenv("GOOGLE_API_KEY")
+    api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
-        return "Error: GOOGLE_API_KEY environment variable not set"
+        return "Error: GEMINI_API_KEY environment variable not set"
     
     prompt=f""" 
     1. Main goal and context: 
