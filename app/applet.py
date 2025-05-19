@@ -30,16 +30,14 @@ def draw_reaction_with_solvent(reactants, products, solvent_text):
 
 # ==== APP STREAMLIT ====
 st.title("🧪 RetroGSF")
+config_input=st.text_input("Enter the path to your config.yml file:") # Can comment here and hardcode the path with the change below
 
 smiles_input = st.text_input("Enter a product SMILES string:")
 
 
 if smiles_input:
     try:
-        df = retrosynthesis_reaction_smiles(
-            smiles_input,
-            config_path="/Users/lealombard/Desktop/EPFL/BA4/prog/PPChem_Project/Lea's/aizynth-data/config.yml"
-        )
+        df = retrosynthesis_reaction_smiles(smiles_input, config_path=config_input) # Change path to config file to not manually input everytime
         reaction_name = rxn_info(df)
         rxn_smiles=df.iloc[0]['mapped_reaction_smiles']
         unmapped_rxn = unmap_reaction_smiles(rxn_smiles)
@@ -47,7 +45,7 @@ if smiles_input:
 
         # Seperate reactants
         reactant_mols = [Chem.MolFromSmiles(r) for r in reactants.split('.')]
-        st.subheader(f"Reaction Name or Class: {reaction_name}")
+        #st.subheader(f"Reaction Name or Class: {reaction_name}")
 
         solvents = get_solvents_for_reaction(reaction_name)
 
@@ -106,6 +104,10 @@ if smiles_input:
             with tabs[4]:
                 st.write("Top solvents by **overall ranking**:")
                 st.dataframe(results['by_overall_ranking'])
+        
+        st.subheader("Other additional information about the retro-synthesis and the target solvent:")
+        st.write(f"Reaction SMILES: {rxn_smiles}")
+        st.write(f"Name or class of the reaction: {reaction_name}")
 
     except Exception as e:
         st.error(f"❌ Error: {e}")
