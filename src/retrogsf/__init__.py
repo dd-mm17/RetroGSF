@@ -7,6 +7,7 @@ from retrogsf.retrogsf import (
     rxn_info,
     get_solvents_for_reaction,
     rank_similar_solvents,
+    unmap_reaction_smiles,
 )
 
 __all__ = [
@@ -14,4 +15,5 @@ __all__ = [
     "rxn_info",
     "get_solvents_for_reaction",
     "rank_similar_solvents",
+    "unmap_reaction_smiles",
 ]
