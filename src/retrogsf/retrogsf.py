@@ -48,7 +48,8 @@ def retrosynthesis_reaction_smiles(smiles: str, config_path: str = "config.yml")
         pd.DataFrame: Table with step number, reactants, product, and Reaction SMILES.
     """
 
-    p = Path("/Users/diego/Desktop/EPFL/Prog. in Chem/data_download/config.yml") # Change path to config file on git
+    #p = Path(".../.../config.yml") # Change path to your config file to use Streamlit!
+    p = Path(config_path)
     expander = AiZynthExpander(configfile=p)
     expander.expansion_policy.select("uspto")
     expander.filter_policy.select("uspto")
@@ -420,7 +421,7 @@ def get_solvents_for_reaction(rxn_name):
     response_stripped = response.text.strip()
     return response_stripped
 
-def rank_similar_solvents(target_smiles, data_path='RetroGSF/data/Solvant_properties_with_smile.csv', n_recommendations=5):
+def rank_similar_solvents(target_smiles, data_path=Path(__file__).parent.parent.parent / 'data' / 'Solvant_properties_with_smile.csv', n_recommendations=5):
     """
     Find solvents with similar physical properties to the target solvent and rank them.
     
