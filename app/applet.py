@@ -1,5 +1,10 @@
-import streamlit as st
+import sys
 from pathlib import Path
+
+retrogsf_path = Path(__file__).resolve().parent.parent / 'src'
+sys.path.append(str(retrogsf_path))
+
+import streamlit as st
 from rdkit.Chem.Draw import IPythonConsole
 from rxn_insight.reaction import Reaction
 from dotenv import load_dotenv
@@ -22,7 +27,7 @@ def draw_reaction_with_solvent(reactants, products, solvent_text):
     draw = ImageDraw.Draw(img_with_text)
     img_with_text.paste(img, (0, 40))
 
-    font = ImageFont.load_default()
+    font = ImageFont.truetype("arial.ttf", 16)
     text_width, _ = draw.textsize(solvent_text, font=font)
     draw.text(((img.width - text_width) / 2, 10), solvent_text, fill="black", font=font)
 
