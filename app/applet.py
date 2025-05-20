@@ -66,9 +66,13 @@ if smiles_input:
 
         solvents_name = get_iupac_name(solvents)
 
-        st.subheader("🧪 Reaction with Suggested Solvent")
+        st.subheader("🧬 Reaction with Suggested Solvent")
         img = draw_reaction_with_solvent(products, reactants, solvents) 
         st.image(img, caption=f"Suggested solvent: { solvents_name}")
+
+        st.subheader("🌐 Informations about the retro-synthesis:")
+        st.write(f"Reaction SMILES: {rxn_smiles}")
+        st.write(f"Name or class of the reaction: {reaction_name}")
 
         results = rank_similar_solvents(solvents)
         if isinstance(results, str):
@@ -115,10 +119,6 @@ if smiles_input:
             with tabs[4]:
                 st.write("Top solvents by **overall ranking**:")
                 st.dataframe(results['by_overall_ranking'])
-        
-        st.subheader("Other additional information about the retro-synthesis and the target solvent:")
-        st.write(f"Reaction SMILES: {rxn_smiles}")
-        st.write(f"Name or class of the reaction: {reaction_name}")
 
     except Exception as e:
         st.error(f"❌ Error: {e}")
