@@ -70,6 +70,17 @@ if smiles_input:
         img = draw_reaction_with_solvent(products, reactants, solvents) 
         st.image(img, caption=f"Suggested solvent: { solvents_name}")
 
+        results = rank_similar_solvents(solvents)
+        if isinstance(results, str):
+                st.error(results)
+        else :
+            tabs = st.tabs([
+                 "🎯 target solvent properties"
+            ])     
+
+            with tabs[0]:
+                st.write("Top solvents by **target solvent properties**:")
+                st.dataframe(results['target_solvent_properties'])
 
         st.subheader("🔬 Similar & Safer Solvent Recommendations")
         results = rank_similar_solvents(solvents)
