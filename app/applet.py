@@ -79,7 +79,7 @@ if smiles_input:
                 st.error(results)
         else :
             tabs = st.tabs([
-                 "🎯 target solvent properties"
+                 "🎯 Target Solvent Properties"
             ])     
 
             with tabs[0]:
@@ -93,7 +93,7 @@ if smiles_input:
             st.error(results)
         else :
             tabs = st.tabs([
-                "🔍 Similarity-based",
+                "🔍 Similarity-Based",
                 "🌱 Environment Ranking",
                 "🩺 Health Ranking",
                 "⚠️ Safety Ranking",
