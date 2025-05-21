@@ -10,29 +10,11 @@ from aizynthfinder.aizynthfinder import AiZynthExpander
 from dotenv import load_dotenv
 import re
 
-# Handle the Google Generative AI import more gracefully
-GENAI_AVAILABLE = False
 try:
     from google import genai
     GENAI_AVAILABLE = True
 except ImportError:
-    # Create a mock genai module for testing
-    class MockGenAI:
-        def configure(self, api_key=None):
-            pass
-            
-        class Client:
-            def __init__(self, api_key=None):
-                pass
-                
-            class models:
-                @staticmethod
-                def generate_content(model=None, contents=None):
-                    class Response:
-                        text = "O, CCO, CC#N"
-                    return Response()
-                    
-    genai = MockGenAI()
+    GENAI_AVAILABLE = False
 
 load_dotenv()
 
@@ -384,14 +366,14 @@ def get_solvents_for_reaction(rxn_name):
     if not api_key:
         return "Error: GEMINI_API_KEY environment variable not set"
     
-    client = genai.Client(api_key=api_key)
     if not GENAI_AVAILABLE:
-        return "O, CCO, CC#N"  # Return default solvents for testing
+        return "GenAI not available." 
         
-    # Load API key from environment variable
-    api_key = os.getenv("GEMINI_API_KEY")
-    if not api_key:
-        return "Error: GEMINI_API_KEY environment variable not set"
+    # Configure genai with API key
+    genai.configure(api_key=api_key)
+    
+    # Create client instance
+    client = genai.Client()
     
     prompt=f""" 
     1. Main goal and context: 
@@ -406,12 +388,9 @@ def get_solvents_for_reaction(rxn_name):
 
     2. Constraints and examples
     The solvent you propose must be part of this list: {known_solvents}
-    You must output only one solvent and everything you output must be in the list 
+    You must output ONE and only one solvent and everything you output must be in the list 
     and in smiles format!
-    You MUST ONLY output the smiles of the solvents in the following format: 
-    "solventsmiles"
-
-    This is an example output for you to visualise with the SMILES: "CN(C)C=O"
+    You MUST ONLY output the smiles of the solvent in the following format as shown by the example: "CN(C)C=O"
 
     3. Problems
     If you are given a reaction name or type which you do now know how to answer, you MUST simply reply with "nan"

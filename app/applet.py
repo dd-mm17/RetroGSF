@@ -15,6 +15,7 @@ from aizynthfinder.aizynthfinder import AiZynthExpander
 from rdkit import Chem
 from rdkit.Chem import Draw
 from PIL import Image, ImageDraw, ImageFont
+import requests
 from retrogsf import retrosynthesis_reaction_smiles, rxn_info, get_solvents_for_reaction, rank_similar_solvents, unmap_reaction_smiles
 
 # ==== RXN Drawing ====
@@ -55,9 +56,6 @@ if smiles_input:
         solvents = get_solvents_for_reaction(reaction_name)
 
         # get_iupac_name function
-        import pandas as pd
-        import requests
-
         def get_iupac_name(smiles):
             try:
                 url = f"https://cactus.nci.nih.gov/chemical/structure/{smiles}/iupac_name"
