@@ -9,13 +9,7 @@ from rxn_insight.reaction import Reaction
 from aizynthfinder.aizynthfinder import AiZynthExpander
 from dotenv import load_dotenv
 import re
-
-try:
-    from google import genai
-    GENAI_AVAILABLE = True
-except ImportError:
-    GENAI_AVAILABLE = False
-
+import google.generativeai as genai
 load_dotenv()
 
 def retrosynthesis_reaction_smiles(smiles: str, config_path: str = "config.yml") -> pd.DataFrame:
@@ -77,7 +71,7 @@ def unmap_reaction_smiles(rxn_smiles: str) -> str:
     unmapped = re.sub(r':\d+\]', ']', rxn_smiles)
     return unmapped
 
-def get_solvents_for_reaction(rxn_name):
+def get_solvents_for_reaction(rxn_name) -> str:
     """
     Get suitable solvents for a reaction using Google's Gemini API.
     
@@ -366,14 +360,11 @@ def get_solvents_for_reaction(rxn_name):
     if not api_key:
         return "Error: GEMINI_API_KEY environment variable not set"
     
-    if not GENAI_AVAILABLE:
-        return "GenAI not available." 
         
     # Configure genai with API key
     genai.configure(api_key=api_key)
-    
-    # Create client instance
-    client = genai.Client()
+    model = genai.GenerativeModel("gemini-2.0-flash")
+
     
     prompt=f""" 
     1. Main goal and context: 
@@ -396,7 +387,7 @@ def get_solvents_for_reaction(rxn_name):
     If you are given a reaction name or type which you do now know how to answer, you MUST simply reply with "nan"
     """
 
-    response = client.models.generate_content(model="gemini-2.0-flash", contents=[prompt])
+    response = model.generate_content(prompt)
     response_stripped = response.text.strip()
     return response_stripped
 
