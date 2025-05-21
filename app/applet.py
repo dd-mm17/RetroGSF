@@ -22,7 +22,7 @@ from retrogsf import retrosynthesis_reaction_smiles, rxn_info, get_solvents_for_
 def draw_reaction_with_solvent(reactants, products, solvent_text):
     rxn_smiles = f"{reactants}>>{products}"
     rxn = Chem.rdChemReactions.ReactionFromSmarts(rxn_smiles, useSmiles=True)
-    img = Draw.ReactionToImage(rxn, subImgSize=(500, 250))
+    img = Draw.ReactionToImage(rxn, subImgSize=(300, 150))
 
     img_with_text = Image.new("RGBA", (img.width, img.height + 40), (255, 255, 255, 255))
     draw = ImageDraw.Draw(img_with_text)
@@ -65,9 +65,6 @@ if smiles_input:
                 url = f"https://cactus.nci.nih.gov/chemical/structure/{smiles}/iupac_name"
                 response = requests.get(url)
                 if response.status_code == 200:
-                    # Check if the response is HTML (error page)
-                    if response.text.strip().startswith("<"):
-                        return "Name not found"
                     return response.text.strip()
                 else:
                     return "Name not found"

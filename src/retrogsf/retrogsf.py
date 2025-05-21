@@ -24,7 +24,6 @@ def retrosynthesis_reaction_smiles(smiles: str, config_path: str = "config.yml")
         pd.DataFrame: Table with step number, reactants, product, and Reaction SMILES.
     """
 
-    #p = Path(".../.../config.yml") # Change path to your config file to use Streamlit!
     p = Path(config_path)
     expander = AiZynthExpander(configfile=p)
     expander.expansion_policy.select("uspto")

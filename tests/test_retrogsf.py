@@ -1,6 +1,7 @@
 import pytest
 import pandas as pd
 import re
+from unittest.mock import patch, MagicMock
 
 # Import the actual functions to test
 from retrogsf.retrogsf import (
@@ -46,13 +47,20 @@ def test_rxn_info(mock_reaction_info, mock_df):
     assert result == "Ester Hydrolysis"
 
 # Test get_solvents_for_reaction with mocked Google Gemini API
-def test_get_solvents_for_reaction(mock_solvent_recommendation):
+def test_get_solvents_for_reaction():
     """Test get_solvents_for_reaction function with mocked Gemini API"""
-    # Call the function
-    result = get_solvents_for_reaction("Ester Hydrolysis")
-    
-    # Verify the result
-    assert result == "O, CCO, CC#N"
+    with patch("google.generativeai.GenerativeModel") as MockModel:
+        mock_model_instance = MockModel.return_value
+        mock_response = MagicMock()
+        mock_response.text = "O"
+        mock_model_instance.generate_content.return_value = mock_response
+
+        # Patch genai.configure to do nothing
+        with patch("google.generativeai.configure"):
+            # Patch os.environ.get to return a fake API key
+            with patch("os.environ.get", return_value="fake_api_key"):
+                result = get_solvents_for_reaction("Ester Hydrolysis")
+                assert result == "O"
 
 def test_rank_similar_solvents(mock_similar_solvents):
     """Test rank_similar_solvents function with mocked pandas operations"""
