@@ -11,31 +11,27 @@ RetroGSF
 
 Predict and evaluates a solvent for a retrosynthesized reaction
 
-## 🔥 Usage
-
-```python
-from mypackage import main_func
-
-# One line to rule them all
-result = main_func(data)
-```
-To use the applet
-
-cd to git repository, open terminal and run ```streamlit run app.py```
-
-
 ## 👩‍💻 Installation
 
-For the first time you will need to create a new environment, you may also give the environment a different name. 
+For first time users, you will need to create a new environment. A virtual environment can be installed with anaconda as follow:
 
 ```
-conda create -n retrogsf python=3.10 
+conda create -n retrogsf python=3.10
+conda activate retrogsf
 ```
+(you may also give the environment a different name)
 
-Then, activate your environment to install the package using pip:
+### 1. Install with pypi:
 ```
 conda activate retrogsf
-(conda_env) $ pip install .
+(conda_env) $ pip install retrogsf
+```
+
+### 2. Installing from the Source:
+```
+git clone https://github.com/dd-mm17/RetroGSF.git
+cd RetroGSF
+pip install .
 ```
 
 ## Additional installations
@@ -59,6 +55,17 @@ The path to your config.yml file will need to be updated in the code at the foll
 2.) Click on "Get API key"
 
 3.) Create a .env file in the root folder with the following text : ```GEMINI_API_KEY="YOUR_API_KEY"```
+
+
+
+
+## 🔥 Usage
+To run the streamlit applet you will need to cd 
+
+cd to git repository, open terminal and run ```streamlit run app.py```
+
+
+
 
 
 ## 🛠️ Development installation
