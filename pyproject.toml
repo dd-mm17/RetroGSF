@@ -16,7 +16,8 @@ dependencies = [
     "google-generativeai>=0.3.0",
     "aizynthfinder>=4.3.0,<4.4.0",
     "python-dotenv",
-    "streamlit"
+    "streamlit", 
+    "transformers==4.30.0"
 ]
 authors = [
   {name = "Diego Meraldi", email = "diego.meraldi@epfl.ch"},
