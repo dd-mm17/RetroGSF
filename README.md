@@ -9,7 +9,7 @@ RetroGSF
 <br>
 
 
-Predict and evaluates a solvent for a retrosynthesized reaction
+Predict and evaluates a solvent for a retrosynthesized reaction.
 
 ## 👩‍💻 Installation
 

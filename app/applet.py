@@ -84,7 +84,7 @@ if smiles_input:
                 st.error(results)
         else :
             tabs = st.tabs([
-                 "🎯 target solvent properties"
+                 "🎯 Target solvent properties"
             ])     
 
             with tabs[0]:
@@ -92,7 +92,6 @@ if smiles_input:
                 st.dataframe(results['target_solvent_properties'])
 
         st.subheader("🔬 Similar & Safer Solvent Recommendations")
-        results = rank_similar_solvents(solvents)
 
         if isinstance(results, str):
             st.error(results)
