@@ -66,31 +66,9 @@ cd to git repository, open terminal and run ```streamlit run app.py```
 
 
 
-
-
 ## 🛠️ Development installation
 
-Initialize Git (only for the first time). 
 
-Note: You should have create an empty repository on `https://github.com:dd-mm17/retrogsf`.
-
-```
-git init
-git add * 
-git add .*
-git commit -m "Initial commit" 
-git branch -M main
-git remote add origin git@github.com:dd-mm17/retrogsf.git 
-git push -u origin main
-```
-
-Then add and commit changes as usual. 
-
-To install the package, run
-
-```
-(retrogsf) $ pip install -e ".[test,doc]"
-```
 
 ### Run tests and coverage
 
