@@ -70,23 +70,6 @@ def mock_reaction_info():
         
         yield
 
-@pytest.fixture
-def mock_solvent_recommendation():
-    """Mock for get_solvents_for_reaction function."""
-    with patch('retrogsf.retrogsf.genai') as mock_genai, \
-         patch('retrogsf.retrogsf.os.environ.get') as mock_get_env:
-        
-        # Configure the mocks
-        mock_get_env.return_value = "fake_api_key"
-        mock_client = MagicMock()
-        mock_genai.Client.return_value = mock_client
-        
-        # Create a mock response object with text attribute
-        mock_response = MagicMock()
-        mock_response.text = "O, CCO, CC#N"
-        mock_client.models.generate_content.return_value = mock_response
-        
-        yield
 
 @pytest.fixture
 def mock_similar_solvents():
