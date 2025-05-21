@@ -421,7 +421,7 @@ def get_solvents_for_reaction(rxn_name):
     response_stripped = response.text.strip()
     return response_stripped
 
-def rank_similar_solvents(target_smiles, data_path=Path(__file__).parent.parent.parent / 'data' / 'Solvant_properties_with_smile.csv', n_recommendations=5):
+def rank_similar_solvents(target_smiles, data_path=None, n_recommendations=5):
     """
     Find solvents with similar physical properties to the target solvent and rank them.
     
@@ -429,8 +429,8 @@ def rank_similar_solvents(target_smiles, data_path=Path(__file__).parent.parent.
     -----------
     target_smiles : str
         SMILES string of the solvent to find alternatives for
-    data_path : str
-        Path to the CSV file containing solvent data
+    data_path : str or Path, optional
+        Path to the CSV file containing solvent data. If None, will use the default path.
     n_recommendations : int
         Number of recommendations to return (default: 5)
         
@@ -438,6 +438,20 @@ def rank_similar_solvents(target_smiles, data_path=Path(__file__).parent.parent.
     --------
     dict of pandas DataFrames containing ranked alternatives or error message if SMILES not found
     """
+    # Set default data path if none provided
+    if data_path is None:
+        data_path = Path(__file__).parent.parent.parent / 'data' / 'Solvant_properties_with_smile.csv'
+        # If the default path doesn't exist, try a fallback path for installed package
+        if not data_path.exists():
+            import importlib.resources as pkg_resources
+            try:
+                # For Python 3.9+
+                from importlib.resources import files
+                data_path = files('retrogsf') / 'data' / 'Solvant_properties_with_smile.csv'
+            except ImportError:
+                # Fallback for older Python versions
+                import retrogsf
+                data_path = Path(pkg_resources.resource_filename('retrogsf', 'data/Solvant_properties_with_smile.csv'))
     # Load the data
     df = pd.read_csv(data_path, sep=';')
     

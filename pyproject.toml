@@ -74,3 +74,10 @@ omit = [
 exclude_also = [
     "if __name__ == .__main__.:",
 ]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/retrogsf"]
+include = ["src/retrogsf/data/*.csv"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/retrogsf/data/*.csv"]
