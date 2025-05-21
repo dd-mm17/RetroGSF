@@ -89,7 +89,7 @@ Then add and commit changes as usual.
 To install the package, run
 
 ```
-(retrogsf) $ pip install -e ".[test,doc]"
+(retrogsf) $ pip install -e './[test,doc]'
 ```
 
 ### Run tests and coverage
