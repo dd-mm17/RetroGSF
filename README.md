@@ -9,7 +9,7 @@ RetroGSF
 <br>
 
 
-Predict and evaluates a solvent for a retrosynthesized reaction
+Predict and evaluates a solvent for a retrosynthesized reaction.
 
 ## 🔥 Usage
 
@@ -21,7 +21,7 @@ result = main_func(data)
 ```
 To use the applet
 
-cd to git repository, open terminal and run ```streamlit run app.py```
+cd to git repository, open terminal and run ```streamlit run applet.py```
 
 
 ## 👩‍💻 Installation

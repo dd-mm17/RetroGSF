@@ -1,0 +1,13 @@
+expansion:
+  uspto:
+    - /Users/lealombard/Desktop/EPFL/BA4/prog/PPChem_Project/Lea's/aizynth-data/uspto_model.onnx
+    - /Users/lealombard/Desktop/EPFL/BA4/prog/PPChem_Project/Lea's/aizynth-data/uspto_templates.csv.gz
+  ringbreaker:
+    - /Users/lealombard/Desktop/EPFL/BA4/prog/PPChem_Project/Lea's/aizynth-data/uspto_ringbreaker_model.onnx
+    - /Users/lealombard/Desktop/EPFL/BA4/prog/PPChem_Project/Lea's/aizynth-data/uspto_ringbreaker_templates.csv.gz
+
+filter:
+  uspto: /Users/lealombard/Desktop/EPFL/BA4/prog/PPChem_Project/Lea's/aizynth-data/uspto_filter_model.onnx
+
+stock:
+  zinc: /Users/lealombard/Desktop/EPFL/BA4/prog/PPChem_Project/Lea's/aizynth-data/zinc_stock.hdf5
