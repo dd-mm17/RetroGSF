@@ -3,13 +3,33 @@
 ![Coverage Status](assets/coverage-badge.svg)
 
 <h1 align="center">
-RetroGSF
+🧪 RetroGSF
 </h1>
 
 <br>
 
 
-Predict and evaluates a solvent for a retrosynthesized reaction.
+**RetroGSF** is a retrosynthesis tool that, from a SMILES input, identifies the chemical reactions necessary for the synthesis of a compound. It then suggests appropriate solvents using Gemini and ranks them based on five key criteria:
+
+- 🔍 Structural similarity
+- 🌱 Environmental impact
+- 🩺 Health impact
+- ⚠️ Safety
+- ⭐ Overall score
+
+## 👥 Authors
+
+- Diego Meraldi  
+- Witek Huguenin-Dezot  
+- Léa Lombard
+
+## 🚀 Features
+
+- 🔬 Retrosynthesis from SMILES
+- 💡 Intelligent solvent suggestion via **Gemini**
+- 🧮 Multi-criteria solvent ranking system
+- 📊 Clear output with ranking scores across five dimensions
+
 
 ## 👩‍💻 Installation
 
@@ -21,13 +41,7 @@ conda activate retrogsf
 ```
 (you may also give the environment a different name)
 
-### 1. Install with pypi:
-```
-conda activate retrogsf
-(conda_env) $ pip install retrogsf
-```
-
-### 2. Installing from the Source:
+### Installing from the Source:
 ```
 git clone https://github.com/dd-mm17/RetroGSF.git
 cd RetroGSF
@@ -48,7 +62,7 @@ More information can be found found here: [Documentation](https://molecularai.gi
 The path to your config.yml file will need to be updated in the code at the following areas:
 
 
-### Google API key
+### 🔑 Google API key
 
 1.) Open the following link : (https://aistudio.google.com/app/apikey)
 
@@ -57,25 +71,33 @@ The path to your config.yml file will need to be updated in the code at the foll
 3.) Create a .env file in the root folder with the following text : ```GEMINI_API_KEY="YOUR_API_KEY"```
 
 
-
-
 ## 🔥 Usage
-To run the streamlit applet you will need to cd 
+### 📱 Running the Streamlit App
 
-cd to git repository, open terminal and run ```streamlit run app.py```
+To run the Streamlit app:
+
+1. Navigate to the `app` directory:
+
+   ```bash
+   cd app
+
+2. In the terminal, run the following command to start the Streamlit app:
+
+   ```bash
+    streamlit run applet.py
 
 
-
-## 🛠️ Development installation
-
-
-
-### Run tests and coverage
+## ⚙️ Run tests and coverage
+To ensure the functionality of the project and check for any issues, you can run tests and check the test coverage. Follow these steps:
 
 ```
 (conda_env) $ pip install tox
 (conda_env) $ tox
 ```
 
+## 📖 License
+This project is licensed under the MIT License. You are free to use, modify, and distribute this software under the terms described in the LICENSE file.
+
+For the full legal text, see the LICENSE file in this repository.
 
 
