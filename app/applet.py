@@ -19,20 +19,26 @@ import requests
 from retrogsf import retrosynthesis_reaction_smiles, rxn_info, get_solvents_for_reaction, rank_similar_solvents, unmap_reaction_smiles
 
 # ==== RXN Drawing ====
-def draw_reaction_with_solvent(reactants, products, solvent_text):
+def draw_reaction_with_solvent(reactants, products, solvent_text, img_width=400):
+
     rxn_smiles = f"{reactants}>>{products}"
     rxn = Chem.rdChemReactions.ReactionFromSmarts(rxn_smiles, useSmiles=True)
-    img = Draw.ReactionToImage(rxn, subImgSize=(300, 150))
+    
+
+    img = Draw.ReactionToImage(rxn, subImgSize=(img_width, int(img_width / 2)))
+
 
     img_with_text = Image.new("RGBA", (img.width, img.height + 40), (255, 255, 255, 255))
     draw = ImageDraw.Draw(img_with_text)
     img_with_text.paste(img, (0, 40))
+
 
     try:
         font = ImageFont.truetype("arial.ttf", 16)
     except OSError:
         font = ImageFont.load_default()
         
+
     text_width, _ = draw.textsize(solvent_text, font=font)
     draw.text(((img.width - text_width) / 2, 10), solvent_text, fill="black", font=font)
 
@@ -77,7 +83,7 @@ if smiles_input:
 
         st.subheader("🧬 Reaction with Suggested Solvent")
         img = draw_reaction_with_solvent(products, reactants, solvents) 
-        st.image(img, caption=f"Suggested solvent: {solvents_name}", width=400)
+        st.image(img, caption=f"Suggested solvent: {solvents_name}", use_container_width=True)
 
         st.subheader("🌐 Informations about the retro-synthesis:")
         st.write(f"Reaction SMILES: {rxn_smiles}")
