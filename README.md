@@ -25,7 +25,7 @@
 
 ## 🚀 Features
 
-- 🔬 Retrosynthesis from SMILES
+- 🔬 Retrosynthesis from SMILES using **AiZynthFinder**
 - 💡 Intelligent solvent suggestion via **Gemini**
 - 🧮 Multi-criteria solvent ranking system
 - 📊 Clear output with ranking scores across five dimensions
@@ -51,7 +51,7 @@ pip install .
 ## Additional installations
 In order to use the streamlit applet you will need to have an Aizynthfinder config.yml file along with a Google AI Studios API keys.
 
-### config.yml file
+### 🗂️ config.yml file
 The config.yml file can be created using (where ```my_folder``` is the folder that you want download to): 
 ```
 download_public_data my_folder
@@ -80,12 +80,13 @@ To run the Streamlit app:
 
    ```bash
    cd app
+   ```
 
 2. In the terminal, run the following command to start the Streamlit app:
 
    ```bash
     streamlit run applet.py
-
+   ```
 
 ## ⚙️ Run tests and coverage
 To ensure the functionality of the project and check for any issues, you can run tests and check the test coverage. Follow these steps:
