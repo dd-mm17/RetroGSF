@@ -25,7 +25,11 @@
 
 ## 🚀 Features
 
+<<<<<<< HEAD
 - 🔬 Retrosynthesis from SMILES
+=======
+- 🔬 Retrosynthesis from SMILES using **AiZynthFinder**
+>>>>>>> 1abdf33d5ffc199c63c8422d6755d8bbf88c54ee
 - 💡 Intelligent solvent suggestion via **Gemini**
 - 🧮 Multi-criteria solvent ranking system
 - 📊 Clear output with ranking scores across five dimensions
@@ -49,9 +53,9 @@ pip install .
 ```
 
 ## Additional installations
-In order to use the streamlit applet you will need to have an Aizynthfinder config.yml file along with a Google AI Studios API keys.
+In order to use the Streamlit applet you will need to have an Aizynthfinder config.yml file along with a Google AI Studios API keys.
 
-### config.yml file
+### 🗂️ config.yml file
 The config.yml file can be created using (where ```my_folder``` is the folder that you want download to): 
 ```
 download_public_data my_folder
@@ -59,7 +63,7 @@ download_public_data my_folder
 
 More information can be found found here: [Documentation](https://molecularai.github.io/aizynthfinder/#) or here [GithHub](https://github.com/MolecularAI/aizynthfinder?tab=readme-ov-file)
 
-The path to your config.yml file will need to be updated in the code at the following areas:
+In order to hardcode the path to your config.yml file, you will need to be updated in the code in the applet.py script at the marked location. Moreover, an example config.yml file is provided in the 'data' folder.
 
 
 ### 🔑 Google API key
@@ -75,6 +79,7 @@ The path to your config.yml file will need to be updated in the code at the foll
 ### 📱 Running the Streamlit App
 
 To run the Streamlit app:
+<<<<<<< HEAD
 
 1. Navigate to the `app` directory:
 
@@ -85,8 +90,24 @@ To run the Streamlit app:
 
    ```bash
     streamlit run applet.py
+=======
+>>>>>>> 1abdf33d5ffc199c63c8422d6755d8bbf88c54ee
 
+1. Navigate to the `app` directory:
 
+<<<<<<< HEAD
+=======
+   ```bash
+   cd app
+   ```
+
+2. In the terminal, run the following command to start the Streamlit app:
+
+   ```bash
+    streamlit run applet.py
+   ```
+
+>>>>>>> 1abdf33d5ffc199c63c8422d6755d8bbf88c54ee
 ## ⚙️ Run tests and coverage
 To ensure the functionality of the project and check for any issues, you can run tests and check the test coverage. Follow these steps:
 
