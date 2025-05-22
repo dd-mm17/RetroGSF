@@ -25,11 +25,7 @@
 
 ## 🚀 Features
 
-<<<<<<< HEAD
-- 🔬 Retrosynthesis from SMILES
-=======
 - 🔬 Retrosynthesis from SMILES using **AiZynthFinder**
->>>>>>> 1abdf33d5ffc199c63c8422d6755d8bbf88c54ee
 - 💡 Intelligent solvent suggestion via **Gemini**
 - 🧮 Multi-criteria solvent ranking system
 - 📊 Clear output with ranking scores across five dimensions
@@ -79,24 +75,9 @@ In order to hardcode the path to your config.yml file, you will need to be updat
 ### 📱 Running the Streamlit App
 
 To run the Streamlit app:
-<<<<<<< HEAD
 
 1. Navigate to the `app` directory:
 
-   ```bash
-   cd app
-
-2. In the terminal, run the following command to start the Streamlit app:
-
-   ```bash
-    streamlit run applet.py
-=======
->>>>>>> 1abdf33d5ffc199c63c8422d6755d8bbf88c54ee
-
-1. Navigate to the `app` directory:
-
-<<<<<<< HEAD
-=======
    ```bash
    cd app
    ```
@@ -107,7 +88,6 @@ To run the Streamlit app:
     streamlit run applet.py
    ```
 
->>>>>>> 1abdf33d5ffc199c63c8422d6755d8bbf88c54ee
 ## ⚙️ Run tests and coverage
 To ensure the functionality of the project and check for any issues, you can run tests and check the test coverage. Follow these steps:
 
