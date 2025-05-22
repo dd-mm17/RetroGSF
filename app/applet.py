@@ -44,6 +44,8 @@ config_input=st.text_input("Enter the path to your config.yml file:") # Can comm
 
 smiles_input = st.text_input("Enter a product SMILES string:")
 
+# Streamlit input for custom data path
+data_path_input = st.text_input("Enter the path to the solvent data file (optional):")
 
 if smiles_input:
     try:
@@ -81,7 +83,8 @@ if smiles_input:
         st.write(f"Reaction SMILES: {rxn_smiles}")
         st.write(f"Name or class of the reaction: {reaction_name}")
 
-        results = rank_similar_solvents(solvents)
+        # Pass the custom path to the function if provided
+        results = rank_similar_solvents(solvents, data_path=data_path_input if data_path_input else None)
         if isinstance(results, str):
                 st.error(results)
         else :

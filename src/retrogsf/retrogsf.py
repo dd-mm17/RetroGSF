@@ -393,7 +393,7 @@ def get_solvents_for_reaction(rxn_name) -> str:
 def rank_similar_solvents(target_smiles, data_path=None, n_recommendations=5):
     """
     Find solvents with similar physical properties to the target solvent and rank them.
-    
+
     Parameters:
     -----------
     target_smiles : str
@@ -408,19 +408,31 @@ def rank_similar_solvents(target_smiles, data_path=None, n_recommendations=5):
     dict of pandas DataFrames containing ranked alternatives or error message if SMILES not found
     """
     if data_path is None:
+        # Default path relative to the project directory
         data_path = Path(__file__).parent.parent.parent / 'data' / 'Solvant_properties_with_smile.csv'
-        if not data_path.exists():
+    
+    # Check if the file exists
+    if not data_path.exists():
+        # Attempt to locate the file in the package directory
+        try:
             import importlib.resources as pkg_resources
-            try:
-                from importlib.resources import files
-                data_path = files('retrogsf') / 'data' / 'Solvant_properties_with_smile.csv'
-            except ImportError:
-                import retrogsf
-                data_path = Path(pkg_resources.resource_filename('retrogsf', 'data/Solvant_properties_with_smile.csv'))
+            from importlib.resources import files
+            data_path = files('retrogsf') / 'data' / 'Solvant_properties_with_smile.csv'
+        except ImportError:
+            import pkg_resources
+            data_path = Path(pkg_resources.resource_filename('retrogsf', 'data/Solvant_properties_with_smile.csv'))
+    
+    # Final check if the file exists
+    if not data_path.exists():
+        raise FileNotFoundError(
+            f"Error: The solvent data file was not found at {data_path}. "
+            "Please ensure the file exists or provide a valid path using the `data_path` parameter."
+        )
 
+    # Load the data
     df = pd.read_csv(data_path, sep=';')
     
- 
+    
     if target_smiles not in df['SMILES'].values:
         return f"Error: No solvent found with SMILES '{target_smiles}' in the dataset."
     
