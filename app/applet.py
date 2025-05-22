@@ -79,7 +79,7 @@ if smiles_input:
             except Exception as e:
                 return f"Error: {str(e)}"
 
-        solvents_name = get_iupac_name(solvents)
+        solvents_name = get_iupac_name(solvents).capitalize()
 
         st.subheader("🧬 Reaction with Suggested Solvent")
         img = draw_reaction_with_solvent(products, reactants, solvents) 
