@@ -96,8 +96,8 @@ To ensure the functionality of the project and check for any issues, you can run
 ```
 
 ## 📖 License
-This project is licensed under the MIT License. You are free to use, modify, and distribute this software under the terms described in the LICENSE file.
+This project is licensed under the MIT License. You are free to use, modify, and distribute this software under the terms described in the [LICENSE](./LICENSE) file.
 
-For the full legal text, see the LICENSE file in this repository.
+For the full legal text, see the [LICENSE](./LICENSE) file in this repository.
 
 
