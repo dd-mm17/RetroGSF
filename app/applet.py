@@ -16,6 +16,7 @@ from rdkit import Chem
 from rdkit.Chem import Draw
 from PIL import Image, ImageDraw, ImageFont
 import requests
+from streamlit_ketcher import st_ketcher
 from retrogsf import retrosynthesis_reaction_smiles, rxn_info, get_solvents_for_reaction, rank_similar_solvents, unmap_reaction_smiles
 
 # ==== RXN Drawing ====
@@ -46,16 +47,27 @@ def draw_reaction_with_solvent(reactants, products, solvent_text, img_width=400)
 
 # ==== APP STREAMLIT ====
 st.title("🧪 RetroGSF")
-config_input=st.text_input("Enter the path to your config.yml file:") # Can comment here and hardcode the path with the change below
+config_input=st.text_input("Enter the path to your config.yml file:")
+input_method = st.radio("Choose input method:", ["Enter SMILES", "Draw Molecule"])
 
-smiles_input = st.text_input("Enter a product SMILES string:")
+if input_method == "Enter SMILES":
+    smiles_input = st.text_input("Enter a product SMILES string:")
+else:
+    # Ketcher drawing interface
+    with st.expander("Draw Molecule From SMILES (optional)", expanded=True):
+        initial_smiles = st.text_input("**Initial SMILES for drawing**", "")
+    ketcher_smiles = st_ketcher(initial_smiles, height=600)
+    
+    with st.expander("Generated SMILES from Drawing"):
+        st.markdown(f"**SMILES:** {ketcher_smiles}")
+    
+    smiles_input = ketcher_smiles
 
-# Streamlit input for custom data path
 data_path_input = st.text_input("Enter the path to the solvent data file (optional):")
 
 if smiles_input:
     try:
-        df = retrosynthesis_reaction_smiles(smiles_input, config_path=config_input) # Change path to config file to not manually input everytime
+        df = retrosynthesis_reaction_smiles(smiles_input, config_path=config_input)
         reaction_name = rxn_info(df)
         rxn_smiles=df.iloc[0]['mapped_reaction_smiles']
         unmapped_rxn = unmap_reaction_smiles(rxn_smiles)
