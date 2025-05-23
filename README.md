@@ -52,9 +52,10 @@ pip install .
 In order to use the Streamlit applet you will need to have an Aizynthfinder config.yml file along with a Google AI Studios API keys.
 
 ### 🗂️ config.yml file
-The config.yml file can be created using (where ```my_folder``` is the folder that you want download to): 
+The config.yml file can be created using (where ```config_folder``` is the folder that you want download to): 
 ```
-download_public_data my_folder
+mkdir config_folder
+download_public_data config_folder
 ```
 
 More information can be found found here: [Documentation](https://molecularai.github.io/aizynthfinder/#) or here [GithHub](https://github.com/MolecularAI/aizynthfinder?tab=readme-ov-file)
@@ -68,7 +69,7 @@ In order to hardcode the path to your config.yml file, you will need to be updat
 
 2.) Click on "Get API key"
 
-3.) Create a .env file in the root folder with the following text : ```GEMINI_API_KEY="YOUR_API_KEY"```
+3.) Create a file named ```.env``` file in the root folder with the following text : ```GEMINI_API_KEY="YOUR_API_KEY"```
 
 
 ## 🔥 Usage
