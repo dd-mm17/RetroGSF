@@ -9,7 +9,7 @@
 <br>
 
 
-**RetroGSF** is a retrosynthesis tool that, from a SMILES input, identifies the chemical reactions necessary for the synthesis of a compound. It then suggests appropriate solvents using Gemini and ranks them based on five key criteria:
+**RetroGSF** is a retrosynthesis tool that, from a SMILES input or a drawing of a product, identifies the chemical reactions necessary for the synthesis of a compound. It then suggests appropriate solvents using Gemini and ranks them based on five key criteria:
 
 - 🔍 Structural similarity
 - 🌱 Environmental impact
@@ -25,7 +25,7 @@
 
 ## 🚀 Features
 
-- 🔬 Retrosynthesis from SMILES using **AiZynthFinder**
+- 🔬 Retrosynthesis from SMILES or a drawing using **AiZynthFinder**
 - 💡 Intelligent solvent suggestion via **Gemini**
 - 🧮 Multi-criteria solvent ranking system
 - 📊 Clear output with ranking scores across five dimensions
